@@ -3,13 +3,15 @@
 
 using System;
 using UnityEngine;
+using UnityEditor;
 
 namespace AmplifyShaderEditor
 {
 	[Serializable]
-	[NodeAttributes( "Break To Components", "Vector Operators", "Breaks the input data into its individual components", null, KeyCode.B )]
+	[NodeAttributes( "Split", "Vector Operators", "Formerly known as Break To Components. Breaks the input data into its individual components", null, KeyCode.B, tags: "split Break To Components" )]
 	public sealed class BreakToComponentsNode : ParentNode
 	{
+		private const string RenameInfo = "This node was formerly known as Break To Components and was renamed to Split to decrease its canvas size.";
 		private WirePortDataType m_currentType = WirePortDataType.FLOAT;
 		private readonly string[] ColorPortNames = { "R", "G", "B", "A" };
 		private readonly string[] VectorPortNames = { "X", "Y", "Z", "W" };
@@ -32,7 +34,15 @@ namespace AmplifyShaderEditor
 
 		public override void RenderNodePreview()
 		{
+			//Runs at least one time
 			if( !m_initialized )
+			{
+				// nodes with no preview don't update at all
+				PreviewIsDirty = false;
+				return;
+			}
+
+			if( !PreviewIsDirty )
 				return;
 
 			SetPreviewInputs();
@@ -45,14 +55,22 @@ namespace AmplifyShaderEditor
 				Graphics.Blit( null, m_outputPorts[ i ].OutputPreviewTexture, PreviewMaterial, Mathf.Min( i, 3 ) );
 				RenderTexture.active = temp;
 			}
+
+			PreviewIsDirty = m_continuousPreviewRefresh;
 		}
 
 		public override RenderTexture PreviewTexture
 		{
 			get
 			{
-				return m_inputPorts[ 0 ].InputPreviewTexture;
+				return m_inputPorts[ 0 ].InputPreviewTexture( ContainerGraph );
 			}
+		}
+
+		public override void DrawProperties()
+		{
+			base.DrawProperties();
+			EditorGUILayout.HelpBox( RenameInfo, MessageType.Warning );
 		}
 
 		void UpdateOutputs( WirePortDataType newType )
@@ -175,6 +193,10 @@ namespace AmplifyShaderEditor
 		public override void OnConnectedOutputNodeChanges( int outputPortId, int otherNodeId, int otherPortId, string name, WirePortDataType type )
 		{
 			base.OnConnectedOutputNodeChanges( outputPortId, otherNodeId, otherPortId, name, type );
+
+			if(  UIUtils.IsLoading || m_isNodeBeingCopied )
+				return;
+
 			m_inputPorts[ 0 ].MatchPortToConnection();
 			UpdateOutputs( m_inputPorts[ 0 ].DataType );
 		}
@@ -182,6 +204,10 @@ namespace AmplifyShaderEditor
 		public override void OnInputPortConnected( int portId, int otherNodeId, int otherPortId, bool activateNode = true )
 		{
 			base.OnInputPortConnected( portId, otherNodeId, otherPortId, activateNode );
+
+			if( UIUtils.IsLoading || m_isNodeBeingCopied )
+				return;
+
 			m_inputPorts[ 0 ].MatchPortToConnection();
 			UpdateOutputs( m_inputPorts[ 0 ].DataType );
 		}

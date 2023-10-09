@@ -13,7 +13,7 @@ namespace AmplifyShaderEditor
 	{
 		Float = 0,
 		Half,
-		Fixed
+		Inherit
 	}
 
 	public enum AvailableShaderTypes
@@ -85,6 +85,9 @@ namespace AmplifyShaderEditor
 
 		[SerializeField]
 		protected int m_masterNodeCategory = 0;// MasterNodeCategories.SurfaceShader;
+
+		[SerializeField]
+		protected bool m_samplingMacros = false;
 
 		[SerializeField]
 		protected string m_currentShaderData = string.Empty;
@@ -160,6 +163,20 @@ namespace AmplifyShaderEditor
 			}
 		}
 
+		public void SetMasterNodeCategoryFromGUID( string GUID )
+		{
+			if( m_availableCategories == null )
+				InitAvailableCategories();
+
+			m_masterNodeCategory = 0;
+			for( int i = 1; i < m_availableCategories.Length; i++ )
+			{
+				if( m_availableCategories[ i ].Name.Equals( GUID ) )
+					m_masterNodeCategory = i;
+			}
+
+		}
+
 		public override void SetupNodeCategories()
 		{
 			//base.SetupNodeCategories();
@@ -221,20 +238,78 @@ namespace AmplifyShaderEditor
 			}
 		}
 
-		protected void DrawCustomInspector()
+		protected void DrawCustomInspector( bool dropdown )
 		{
+#if !UNITY_2018_3_OR_NEWER
+			dropdown = false;
+#else
+			if( ASEPackageManagerHelper.CurrentHDVersion <= ASESRPVersions.ASE_SRP_5_16_1 )
+				dropdown = false;
+#endif
+
 			EditorGUILayout.BeginHorizontal();
 			m_customInspectorName = EditorGUILayoutTextField( CustomInspectorStr, m_customInspectorName );
-			if( GUILayoutButton( string.Empty, UIUtils.GetCustomStyle( CustomStyle.ResetToDefaultInspectorButton ), GUILayout.Width( 15 ), GUILayout.Height( 15 ) ) )
+			if( !dropdown )
 			{
-				GUIUtility.keyboardControl = 0;
-				m_customInspectorName = Constants.DefaultCustomInspector;
+				if( GUILayoutButton( string.Empty, UIUtils.GetCustomStyle( CustomStyle.ResetToDefaultInspectorButton ), GUILayout.Width( 15 ), GUILayout.Height( 15 ) ) )
+				{
+					GUIUtility.keyboardControl = 0;
+					m_customInspectorName = Constants.DefaultCustomInspector;
+				}
+			}
+			else
+			{
+				if( GUILayoutButton( string.Empty, UIUtils.InspectorPopdropdownFallback, GUILayout.Width( 17 ), GUILayout.Height( 19 ) ) )
+				{
+					EditorGUI.FocusTextInControl( null );
+					GUI.FocusControl( null );
+
+					GenericMenu menu = new GenericMenu();
+					AddMenuItem( menu, Constants.DefaultCustomInspector );
+#if UNITY_2018_3_OR_NEWER
+					if( ASEPackageManagerHelper.CurrentHDVersion > ASESRPVersions.ASE_SRP_6_9_1 )
+					{
+						if( ASEPackageManagerHelper.CurrentHDVersion > ASESRPVersions.ASE_SRP_10_0_0 )
+						{
+							AddMenuItem( menu, "Rendering.HighDefinition.LightingShaderGraphGUI" );
+							AddMenuItem( menu, "Rendering.HighDefinition.HDUnlitGUI" );
+						}
+						else
+						{
+							AddMenuItem( menu, "UnityEditor.Rendering.HighDefinition.HDLitGUI" );
+						}
+						AddMenuItem( menu, "UnityEditor.ShaderGraph.PBRMasterGUI" );
+					}
+					else
+					{
+						AddMenuItem( menu, "UnityEditor.Experimental.Rendering.HDPipeline.HDLitGUI" );
+					}
+#else
+					AddMenuItem( menu, "UnityEditor.Experimental.Rendering.HDPipeline.HDLitGUI" );
+#endif
+					menu.ShowAsContext();
+				}
 			}
 			EditorGUILayout.EndHorizontal();
 		}
 
+		private void AddMenuItem( GenericMenu menu, string newClass )
+		{
+			menu.AddItem( new GUIContent( newClass ), m_customInspectorName.Equals( newClass ), OnSelection, newClass );
+		}
+
+		private void OnSelection( object newClass )
+		{
+			m_customInspectorName = (string)newClass;
+		}
+
 		protected void DrawShaderName()
 		{
+#if UNITY_2019_1_OR_NEWER
+			// this is a hack to control the automatic selection of text fields when the window is selected after serialization
+			// by having a selectable label the focus happens on it instead and doesn't interupt the usual flow of the editor
+			EditorGUILayout.SelectableLabel( "", GUILayout.Height( 0 ) );
+#endif
 			EditorGUI.BeginChangeCheck();
 			string newShaderName = EditorGUILayoutTextField( m_shaderNameContent, m_shaderName );
 			if( EditorGUI.EndChangeCheck() )
@@ -251,6 +326,14 @@ namespace AmplifyShaderEditor
 				ContainerGraph.ParentWindow.UpdateTabTitle( ShaderName, true );
 			}
 			m_shaderNameContent.tooltip = m_shaderName;
+		}
+
+		protected void DrawSamplingMacros()
+		{
+			EditorGUI.BeginChangeCheck();
+			m_samplingMacros = EditorGUILayoutToggle( "Use Sampling Macros", m_samplingMacros );
+			if( EditorGUI.EndChangeCheck() )
+				ContainerGraph.SamplingMacros = SamplingMacros;
 		}
 
 		public void DrawShaderKeywords()
@@ -389,7 +472,6 @@ namespace AmplifyShaderEditor
 			base.WriteToString( ref nodeInfo, ref connectionsInfo );
 			//IOUtils.AddFieldValueToString( ref nodeInfo, m_isMainMasterNode );
 			IOUtils.AddFieldValueToString( ref nodeInfo, m_shaderModelIdx );
-			IOUtils.AddFieldValueToString( ref nodeInfo, m_currentPrecisionType );
 			IOUtils.AddFieldValueToString( ref nodeInfo, m_customInspectorName );
 			IOUtils.AddFieldValueToString( ref nodeInfo, m_shaderLOD );
 			IOUtils.AddFieldValueToString( ref nodeInfo, m_masterNodeCategory );
@@ -401,10 +483,20 @@ namespace AmplifyShaderEditor
 			if( UIUtils.CurrentShaderVersion() > 21 )
 			{
 				m_shaderModelIdx = Convert.ToInt32( GetCurrentParam( ref nodeParams ) );
-				m_currentPrecisionType = (PrecisionType)Enum.Parse( typeof( PrecisionType ), GetCurrentParam( ref nodeParams ) );
-				if( m_currentPrecisionType == PrecisionType.Fixed )
+				if( UIUtils.CurrentShaderVersion() < 17005 )
 				{
-					m_currentPrecisionType = PrecisionType.Half;
+					string val = GetCurrentParam( ref nodeParams );
+					if( m_customPrecision )
+					{
+						if( val.Equals( "Fixed" ) )
+							m_currentPrecisionType = PrecisionType.Half;
+						else
+							m_currentPrecisionType = (PrecisionType)Enum.Parse( typeof( PrecisionType ), val );
+					}
+					else
+					{
+						m_currentPrecisionType = PrecisionType.Inherit;
+					}
 				}
 			}
 
@@ -415,7 +507,7 @@ namespace AmplifyShaderEditor
 
 			if( UIUtils.CurrentShaderVersion() > 6101 )
 			{
-				m_shaderLOD = Convert.ToInt32( GetCurrentParam( ref nodeParams ) );
+				ShaderLOD = Convert.ToInt32( GetCurrentParam( ref nodeParams ) );
 			}
 
 			if( UIUtils.CurrentShaderVersion() >= 13001 )
@@ -542,7 +634,12 @@ namespace AmplifyShaderEditor
 					if( m_currentMaterial.shader != m_currentShader )
 						m_currentMaterial.shader = m_currentShader;
 
-					m_currentDataCollector.UpdateMaterialOnPropertyNodes( m_currentMaterial );
+					//m_currentDataCollector.UpdateMaterialOnPropertyNodes( m_currentMaterial );
+					//This master node UpdateMaterial is needed on Standard Surface node to update its internal properties
+					UpdateMaterial( m_currentMaterial );
+
+					UIUtils.CurrentWindow.OutsideGraph.UpdateMaterialOnPropertyNodes( m_currentMaterial );
+
 					FireMaterialChangedEvt();
 					// need to always get asset datapath because a user can change and asset location from the project window
 					//AssetDatabase.ImportAsset( AssetDatabase.GetAssetPath( m_currentMaterial ) );
@@ -626,7 +723,16 @@ namespace AmplifyShaderEditor
 
 					drawElementCallback = ( Rect rect, int index, bool isActive, bool isFocused ) =>
 					{
-						EditorGUI.LabelField( rect, m_propertyNodesVisibleList[ index ].PropertyInspectorName );
+						var first = rect;
+						first.width *= 0.60f;
+						EditorGUI.LabelField( first, m_propertyNodesVisibleList[ index ].PropertyInspectorName );
+						var second = rect;
+						second.width *= 0.4f;
+						second.x += first.width;
+						if( GUI.Button( second, m_propertyNodesVisibleList[ index ].PropertyName, new GUIStyle( "AssetLabel Partial" ) ) )
+						{
+							UIUtils.FocusOnNode( m_propertyNodesVisibleList[ index ], 1, false );
+						}
 					},
 
 					onReorderCallback = ( list ) =>
@@ -665,6 +771,19 @@ namespace AmplifyShaderEditor
 
 			ReorderList( ref nodes );
 			//RecursiveLog();
+		}
+
+		private void RecursiveLog()
+		{
+			List<PropertyNode> nodes = UIUtils.PropertyNodesList();
+			nodes.Sort( ( x, y ) => { return x.OrderIndex.CompareTo( y.OrderIndex ); } );
+			for( int i = 0; i < nodes.Count; i++ )
+			{
+				if( ( nodes[ i ] is ReordenatorNode ) )
+					( nodes[ i ] as ReordenatorNode ).RecursiveLog();
+				else
+					Debug.Log( nodes[ i ].OrderIndex + " " + nodes[ i ].PropertyName );
+			}
 		}
 
 		private void ReorderList( ref List<PropertyNode> nodes )
@@ -865,12 +984,30 @@ namespace AmplifyShaderEditor
 		}
 		public string CustomInspectorFormatted { get { return string.Format( CustomInspectorFormat, m_customInspectorName ); } }
 		public string CroppedShaderName { get { return m_croppedShaderName; } }
-		public AvailableShaderTypes CurrentMasterNodeCategory { get { return ( m_masterNodeCategory == 0 ) ? AvailableShaderTypes.SurfaceShader : AvailableShaderTypes.Template; } }
+		public virtual AvailableShaderTypes CurrentMasterNodeCategory { get { return ( m_masterNodeCategory == 0 ) ? AvailableShaderTypes.SurfaceShader : AvailableShaderTypes.Template; } }
 		public int CurrentMasterNodeCategoryIdx { get { return m_masterNodeCategory; } }
 		public MasterNodeDataCollector CurrentDataCollector { get { return m_currentDataCollector; } set { m_currentDataCollector = value; } }
 		public List<PropertyNode> PropertyNodesVisibleList { get { return m_propertyNodesVisibleList; } }
 		public ReorderableList PropertyReordableList { get { return m_propertyReordableList; } }
 		public int ReordableListLastCount { get { return m_lastCount; } }
 		public MasterNodeCategoriesData CurrentCategoriesData { get { return m_availableCategories[ m_masterNodeCategory ]; } }
+		public int ShaderLOD
+		{
+			get { return m_shaderLOD; }
+			set
+			{
+				m_shaderLOD = Mathf.Max( 0, value );
+			}
+		}
+		public bool SamplingMacros 
+		{
+			get { return m_samplingMacros; }
+			set
+			{
+				m_samplingMacros = value;
+				if( IsLODMainMasterNode )
+					ContainerGraph.SamplingMacros = value;
+			}
+		}
 	}
 }
