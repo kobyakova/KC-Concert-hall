@@ -36,7 +36,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: cb8847bf606b2534db2e166eff5a3cb0, type: 3}
+        m_Texture: {fileID: 2800000, guid: d5b9f4567a4348f4eada27584ddd29a0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -103,7 +103,7 @@ Material:
     - _Delay: 0
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Emission: 0.5
+    - _Emission: 2
     - _EnableAudioLink: 1
     - _EnableAutogain: 1
     - _EnableColorChord: 0
@@ -198,7 +198,7 @@ Material:
     - _CustomThemeColor2: {r: 1, g: 0, b: 0, a: 1}
     - _CustomThemeColor3: {r: 0, g: 1, b: 0, a: 1}
     - _Emission: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
     - _HighlightPosition: {r: 0, g: 0, b: 0, a: 0}
     - _IntensityColor: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 0}
     - _MarkerColor: {r: 0, g: 0, b: 0, a: 0}

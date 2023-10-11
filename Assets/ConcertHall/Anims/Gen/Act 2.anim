@@ -1676,6 +1676,15 @@ AnimationClip:
     path: Walls/PanelRoatableL/Panel
     classID: 23
     script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 2100000, guid: 5afb1e55f9022954680c34dc915fe335, type: 2}
+    - time: 15.05
+      value: {fileID: 2100000, guid: eff8d95f3629fea4b836b8a3e5b6b52a, type: 2}
+    attribute: m_Materials.Array.data[0]
+    path: Room (1)/Main Screen
+    classID: 23
+    script: {fileID: 0}
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -2412,6 +2421,13 @@ AnimationClip:
       customType: 21
       isPPtrCurve: 1
     - serializedVersion: 2
+      path: 3237615935
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 23
+      customType: 21
+      isPPtrCurve: 1
+    - serializedVersion: 2
       path: 1801580670
       attribute: 1
       script: {fileID: 0}
@@ -2559,6 +2575,8 @@ AnimationClip:
     - {fileID: 2100000, guid: acb7e60239e576d4b931c97e830f2ed3, type: 2}
     - {fileID: 2100000, guid: bd77230e72ec7c14fb33acd842ac8d4a, type: 2}
     - {fileID: 2100000, guid: acb7e60239e576d4b931c97e830f2ed3, type: 2}
+    - {fileID: 2100000, guid: 5afb1e55f9022954680c34dc915fe335, type: 2}
+    - {fileID: 2100000, guid: eff8d95f3629fea4b836b8a3e5b6b52a, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
