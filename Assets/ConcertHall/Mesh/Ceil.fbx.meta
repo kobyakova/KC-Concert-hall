@@ -1,0 +1,166 @@
+fileFormatVersion: 2
+guid: f4511400ecaa7a24894868bf9889a822
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: -7936503575635235861
+    second: MainWalls.002|Box1867.015Action.001
+  - first:
+      74: 1431815321805667172
+    second: MainWalls.002|Box1867.032Action.002
+  - first:
+      74: 5554522410406927018
+    second: MainWalls.002|Box1867.032Action.003
+  - first:
+      74: 5173814918104716732
+    second: MainWalls.002|Box1867.034Action.004
+  - first:
+      74: 5753763429033516490
+    second: MainWalls.002|Box1867.034Action.005
+  - first:
+      74: 913651699182224274
+    second: MainWalls.002|Box1867.034Action.006
+  - first:
+      74: 5266650608218413687
+    second: MainWalls.002|Box1867.034Action.007
+  - first:
+      74: 435143208609929784
+    second: MainWalls.002|Box1867.038Action.001
+  - first:
+      74: 6113991142343591438
+    second: MainWalls.002|Box1867.039Action.001
+  - first:
+      74: -6473375342092906249
+    second: MainWalls.002|Box1867Action.010
+  - first:
+      74: 6672635001968602604
+    second: MainWalls.002|Box1867Action.011
+  - first:
+      74: 3288968399899872953
+    second: MainWalls.002|Box1889.012Action.002
+  - first:
+      74: -8519787388277302741
+    second: MainWalls.002|Box1889.012Action.003
+  - first:
+      74: -5623855533351148356
+    second: MainWalls.002|Box1889.036Action.001
+  - first:
+      74: 1187560801792580588
+    second: MainWalls.002|Box1889Action
+  - first:
+      74: 3412426625996576694
+    second: MainWalls.002|Box1889Action.011
+  - first:
+      74: -7974217706805605244
+    second: MainWalls.002|Box1889Action.013
+  - first:
+      74: -7903413778472767542
+    second: MainWalls.002|Box1889Action.014
+  - first:
+      74: -6819172427099790896
+    second: MainWalls.002|CeilOpening
+  - first:
+      74: -2124337132815307356
+    second: MainWalls.002|CeilOpening.001
+  - first:
+      74: 7915433781046661960
+    second: MainWalls.002|LatticeAction
+  - first:
+      74: -4465377280549728969
+    second: MainWalls.002|RibbedWall2ndFloorAction.001
+  - first:
+      74: -8520541524068552505
+    second: "MainWalls.002|\u0413\u0440\u0443\u043F\u043F\u0430#15 [1318136]Action"
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

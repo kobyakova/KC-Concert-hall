@@ -114,7 +114,7 @@ Material:
     - FinalStrobeFreq: 0
     - _2D_NOISE_ON: 1
     - _AlphaToCoverage: 0
-    - _Band: 0
+    - _Band: 1
     - _BandMultiplier: 1
     - _BlendDst: 1
     - _BlendOp: 0
@@ -123,12 +123,12 @@ Material:
     - _BlindingStrength: 1
     - _BlueMultiplier: 1
     - _BumpScale: 1
-    - _ConeLength: 2.13
-    - _ConeSync: 6
+    - _ConeLength: 10
+    - _ConeSync: 4.29
     - _ConeWidth: 3.38
     - _DNEnabler: 0
     - _Delay: 0
-    - _DistFade: 0.5
+    - _DistFade: 0
     - _Divide: 11.6
     - _DividePower: 0.043
     - _EnableAudioLink: 0
@@ -140,8 +140,8 @@ Material:
     - _EnableStrobe: 0
     - _EnableThemeColorSampling: 0
     - _Fade: 1.5
-    - _FadeAmt: 35
-    - _FadeStrength: 8
+    - _FadeAmt: 1
+    - _FadeStrength: 1
     - _FeatherOffset: 0.5
     - _FinalIntensity: 1
     - _FinalStrobeFreq: 0
@@ -256,7 +256,7 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Emission: {r: 2.6701574, g: 0, b: 2.5293853, a: 1}
+    - _Emission: {r: 3.5648699, g: 0, b: 0.03386126, a: 1}
     - _EmissionColor: {r: 9.363626, g: 9.363626, b: 9.363626, a: 3}
     - _FixtureRotationOrigin: {r: 0, g: 0, b: 0, a: 0}
     - _LightColor: {r: 23.968628, g: 23.968628, b: 23.968628, a: 1}

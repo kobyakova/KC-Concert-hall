@@ -1,0 +1,181 @@
+fileFormatVersion: 2
+guid: cd47d8e916de5f645859fec657cde3af
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: 2887483900798797345
+    second: MovingWave2|Box1867.015Action.001
+  - first:
+      74: 8628448779472218765
+    second: MovingWave2|Box1867.032Action.002
+  - first:
+      74: -5581797726231610327
+    second: MovingWave2|Box1867.032Action.003
+  - first:
+      74: -5489308148631324119
+    second: MovingWave2|Box1867.034Action.004
+  - first:
+      74: 3794276263127460202
+    second: MovingWave2|Box1867.034Action.005
+  - first:
+      74: -5613893309351712903
+    second: MovingWave2|Box1867.034Action.006
+  - first:
+      74: -3748110963193674758
+    second: MovingWave2|Box1867.034Action.007
+  - first:
+      74: 7933336192453356261
+    second: MovingWave2|Box1867.038Action.001
+  - first:
+      74: -1946423215078454495
+    second: MovingWave2|Box1867.039Action.001
+  - first:
+      74: -7420084753269616933
+    second: MovingWave2|Box1867Action.010
+  - first:
+      74: -1159492749343801306
+    second: MovingWave2|Box1867Action.011
+  - first:
+      74: 292153241046150608
+    second: MovingWave2|Box1889.012Action.002
+  - first:
+      74: 3250455850792408995
+    second: MovingWave2|Box1889.012Action.003
+  - first:
+      74: 4408396236714267749
+    second: MovingWave2|Box1889.036Action.001
+  - first:
+      74: -2880990133354020680
+    second: MovingWave2|Box1889Action
+  - first:
+      74: -5021696204434220768
+    second: MovingWave2|Box1889Action.011
+  - first:
+      74: 6036117532124078219
+    second: MovingWave2|Box1889Action.013
+  - first:
+      74: -8744180247549840732
+    second: MovingWave2|Box1889Action.014
+  - first:
+      74: -2625213636439762686
+    second: MovingWave2|LatticeAction
+  - first:
+      74: -1911192923224156070
+    second: MovingWave2|MovingWave2Base
+  - first:
+      74: -306902314922782833
+    second: MovingWave2|MovingWave2BaseRot
+  - first:
+      74: -4112208763293358268
+    second: MovingWave2|MovingWave2BaseRotHalf
+  - first:
+      74: 1075708519963317698
+    second: MovingWave2|MovingWave2BaseUp
+  - first:
+      74: 6255038090055721964
+    second: MovingWave2|MovingWave2BaseUp.001
+  - first:
+      74: -5912985665023774777
+    second: MovingWave2|PlaneAction
+  - first:
+      74: 838608257702624328
+    second: MovingWave2|RibbedWall2ndFloorAction.001
+  - first:
+      74: -916239250438006149
+    second: MovingWave2|WaveRot2
+  - first:
+      74: -1240485227772051112
+    second: "MovingWave2|\u0413\u0440\u0443\u043F\u043F\u0430#15 [1318136]Action"
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
