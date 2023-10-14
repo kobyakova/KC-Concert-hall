@@ -726,6 +726,13 @@ AnimationClip:
     path: Walls/PanelRoatableL/Panel
     classID: 23
     script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 2100000, guid: 854ad211fde62e64b86a2d3ad6f32863, type: 2}
+    attribute: m_Materials.Array.data[0]
+    path: Acts/Act 9
+    classID: 23
+    script: {fileID: 0}
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
@@ -1266,6 +1273,13 @@ AnimationClip:
       customType: 21
       isPPtrCurve: 1
     - serializedVersion: 2
+      path: 553983620
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 23
+      customType: 21
+      isPPtrCurve: 1
+    - serializedVersion: 2
       path: 749031683
       attribute: 1
       script: {fileID: 0}
@@ -1394,6 +1408,7 @@ AnimationClip:
     - {fileID: 2100000, guid: 84aa0d880e4c67b48a58198638f9b680, type: 2}
     - {fileID: 2100000, guid: 84aa0d880e4c67b48a58198638f9b680, type: 2}
     - {fileID: 2100000, guid: 84aa0d880e4c67b48a58198638f9b680, type: 2}
+    - {fileID: 2100000, guid: 854ad211fde62e64b86a2d3ad6f32863, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

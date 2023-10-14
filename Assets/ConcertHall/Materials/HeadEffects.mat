@@ -7,15 +7,19 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AudioReactiveHead
-  m_Shader: {fileID: 4800000, guid: 784867d15973a4847b1a6048d42c1565, type: 3}
-  m_ShaderKeywords: POI_AL_DECAL POI_AUDIOLINK VIGNETTE_MASKED _EMISSION _LIGHTINGMODE_REALISTIC
-    _RIM2STYLE_POIYOMI _RIMSTYLE_POIYOMI _STOCHASTICMODE_DELIOT_HEITZ
+  m_Name: HeadEffects
+  m_Shader: {fileID: 4800000, guid: bd3880b42682a0e458c441f7896d80c2, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
-  stringTagMap: {}
+  stringTagMap:
+    AllLockedGUIDS: a4491603fa30a5845b28efe00501c2ec
+    OriginalKeywords: POI_AL_DECAL VIGNETTE_MASKED _EMISSION _LIGHTINGMODE_REALISTIC
+      _RIM2STYLE_POIYOMI _RIMSTYLE_POIYOMI _STOCHASTICMODE_DELIOT_HEITZ
+    OriginalShader: .poiyomi/Poiyomi 8.1/Poiyomi World
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -297,7 +301,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: b52c609d699b68842af3b834d5655e73, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Matcap:
@@ -1178,7 +1182,7 @@ Material:
     - _EmissiveScroll_Width3: 10
     - _EnableALDecal: 1
     - _EnableAniso: 0
-    - _EnableAudioLink: 1
+    - _EnableAudioLink: 0
     - _EnableDepthBulge: 0
     - _EnableDepthRimLighting: 0
     - _EnableDissolve: 0
@@ -2125,7 +2129,7 @@ Material:
     - _Set_RimLightMaskChannel: 1
     - _Set_RimLightMaskUV: 0
     - _ShadeColor_Step: 0
-    - _ShaderOptimizerEnabled: 0
+    - _ShaderOptimizerEnabled: 1
     - _ShaderUIWarning0: -0
     - _ShaderUIWarning1: -0
     - _ShadingEnabled: 1
@@ -2390,7 +2394,7 @@ Material:
     - g_start_decal_position: 0
     - g_start_deliot: 0
     - g_start_hextile: 0
-    - m_AudioLinkCategory: 1
+    - m_AudioLinkCategory: 0
     - m_end_ALDecalSpectrum: 0
     - m_end_ALVolumeColor: 0
     - m_end_Alpha: 0
@@ -2522,8 +2526,8 @@ Material:
     - m_end_vertexGlitching: 0
     - m_end_vertexManipulation: 0
     - m_end_videoEffects: 0
-    - m_lightingCategory: 1
-    - m_mainCategory: 0
+    - m_lightingCategory: 0
+    - m_mainCategory: 1
     - m_modifierCategory: 0
     - m_postprocessing: 0
     - m_renderingCategory: 0
@@ -2593,7 +2597,7 @@ Material:
     - m_start_Matcap4: 0
     - m_start_PathAudioLink: 0
     - m_start_PoiLightData: 0
-    - m_start_PoiShading: 1
+    - m_start_PoiShading: 0
     - m_start_RGBAColors: 0
     - m_start_RGBMask: 0
     - m_start_Rim2AudioLink: 0
