@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: VRStageLighting_AudioLink_Laser
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 32080684d0a4bee4a8edfe0aac5543cd,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 55766492fbd52d143b038013dda62b44,
     type: 2}
   udonAssembly: 
   assemblyError: 
