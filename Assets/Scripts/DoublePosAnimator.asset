@@ -19,36 +19,19 @@ MonoBehaviour:
     %VRCUdonUdonBehaviour, this\r\n    __target_0: %VRCUdonCommonInterfacesNetworkEventTarget,
     null\r\n    __eventName_0: %SystemString, null\r\n    __instance_1: %UnityEngineAnimator,
     null\r\n    __name_0: %SystemString, null\r\n    __value_0: %SystemInt32, null\r\n   
-    __Boolean_0: %SystemBoolean, null\r\n    __Boolean_1: %SystemBoolean, null\r\n   
-    __instance_2: %SystemInt32, null\r\n    __obj_0: %SystemInt32, null\r\n    __instance_3:
-    %UnityEngineAnimator, null\r\n    __name_1: %SystemString, null\r\n    __instance_4:
-    %VRCUdonUdonBehaviour, this\r\n    __target_1: %VRCUdonCommonInterfacesNetworkEventTarget,
-    null\r\n    __eventName_1: %SystemString, null\r\n    __instance_5: %UnityEngineAnimator,
-    null\r\n    __name_2: %SystemString, null\r\n    __value_1: %SystemInt32, null\r\n   
-    anim: %UnityEngineAnimator, null\r\n    ParName: %SystemString, null\r\n    AnimParametr:
-    %SystemInt32, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n    .export _interact\r\n   
-    \r\n    _interact:\r\n    \r\n        PUSH, __instance_0\r\n        PUSH, __target_0\r\n       
-    PUSH, __eventName_0\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomNetworkEvent__VRCUdonCommonInterfacesNetworkEventTarget_SystemString__SystemVoid\"\r\n       
+    __instance_2: %UnityEngineAnimator, null\r\n    __name_1: %SystemString, null\r\n   
+    __value_1: %SystemInt32, null\r\n    anim: %UnityEngineAnimator, null\r\n   
+    ParName: %SystemString, null\r\n    AnimParametr: %SystemInt32, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n   
+    .export _interact\r\n    \r\n    _interact:\r\n    \r\n        PUSH, __instance_0\r\n       
+    PUSH, __target_0\r\n        PUSH, __eventName_0\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomNetworkEvent__VRCUdonCommonInterfacesNetworkEventTarget_SystemString__SystemVoid\"\r\n       
     JUMP, 0xFFFFFFFC\r\n    \r\n    .export IncludeAnim\r\n    \r\n    IncludeAnim:\r\n   
     \r\n        PUSH, anim\r\n        PUSH, __instance_1\r\n        COPY\r\n       
     PUSH, ParName\r\n        PUSH, __name_0\r\n        COPY\r\n        PUSH, __instance_1\r\n       
     PUSH, __name_0\r\n        PUSH, AnimParametr\r\n        EXTERN, \"UnityEngineAnimator.__SetInteger__SystemString_SystemInt32__SystemVoid\"\r\n       
-    JUMP, 0xFFFFFFFC\r\n    \r\n    .export _onPlayerJoined\r\n    \r\n    _onPlayerJoined:\r\n   
-    \r\n        PUSH, __Boolean_0\r\n        EXTERN, \"VRCSDKBaseNetworking.__get_IsMaster__SystemBoolean\"\r\n       
-    PUSH, __Boolean_0\r\n        JUMP_IF_FALSE, 0x00000140\r\n        PUSH, anim\r\n       
-    PUSH, __instance_3\r\n        COPY\r\n        PUSH, ParName\r\n        PUSH,
-    __name_1\r\n        COPY\r\n        PUSH, __instance_3\r\n        PUSH, __name_1\r\n       
-    PUSH, __instance_2\r\n        EXTERN, \"UnityEngineAnimator.__GetInteger__SystemString__SystemInt32\"\r\n       
-    PUSH, __instance_2\r\n        PUSH, AnimParametr\r\n        PUSH, __Boolean_1\r\n       
-    EXTERN, \"SystemInt32.__Equals__SystemInt32__SystemBoolean\"\r\n        PUSH,
-    __Boolean_1\r\n        JUMP_IF_FALSE, 0x00000118\r\n        JUMP, 0x00000138\r\n       
-    PUSH, __instance_4\r\n        PUSH, __target_1\r\n        PUSH, __eventName_1\r\n       
-    EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomNetworkEvent__VRCUdonCommonInterfacesNetworkEventTarget_SystemString__SystemVoid\"\r\n       
-    JUMP, 0x00000140\r\n        JUMP, 0xFFFFFFFC\r\n    \r\n    .export LateJoin\r\n   
-    \r\n    LateJoin:\r\n    \r\n        PUSH, anim\r\n        PUSH, __instance_5\r\n       
-    COPY\r\n        PUSH, ParName\r\n        PUSH, __name_2\r\n        COPY\r\n       
-    PUSH, __instance_5\r\n        PUSH, __name_2\r\n        PUSH, AnimParametr\r\n       
-    EXTERN, \"UnityEngineAnimator.__SetInteger__SystemString_SystemInt32__SystemVoid\"\r\n       
+    JUMP, 0xFFFFFFFC\r\n    \r\n    .export LateJoin\r\n    \r\n    LateJoin:\r\n   
+    \r\n        PUSH, anim\r\n        PUSH, __instance_2\r\n        COPY\r\n       
+    PUSH, ParName\r\n        PUSH, __name_1\r\n        COPY\r\n        PUSH, __instance_2\r\n       
+    PUSH, __name_1\r\n        PUSH, AnimParametr\r\n        EXTERN, \"UnityEngineAnimator.__SetInteger__SystemString_SystemInt32__SystemVoid\"\r\n       
     JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
   assemblyError: 
   graphData:
@@ -80,7 +63,7 @@ MonoBehaviour:
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Get_Variable
       uid: f0d800c4-eb34-4d2c-b67b-3a5689791477
-      position: {x: 214.51164, y: 615.20435}
+      position: {x: 337.5125, y: 247.03249}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -121,7 +104,7 @@ MonoBehaviour:
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Get_Variable
       uid: c0b32b9e-2f6f-43d1-94b9-31d3fcc8f81e
-      position: {x: 256.01987, y: 264.50198}
+      position: {x: 198.84253, y: 273.42496}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -148,7 +131,7 @@ MonoBehaviour:
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|IncludeAnim
     - fullName: Event_Custom
       uid: eab197db-344f-49a1-9c1c-8e0b5fab1a46
-      position: {x: 208.4095, y: 146.72763}
+      position: {x: 495.48007, y: 223.3225}
       nodeUIDs:
       - 
       flowUIDs:
@@ -161,7 +144,7 @@ MonoBehaviour:
       position: {x: 1073, y: 109}
       nodeUIDs: []
       flowUIDs:
-      - ef7e4272-96f5-427b-8255-90994e5fec8f
+      - 
       nodeValues: []
     - fullName: VRCSDKBaseNetworking.__get_IsMaster__SystemBoolean
       uid: cf44e156-6e42-420f-93ff-c7de7b6ccef6
@@ -176,6 +159,7 @@ MonoBehaviour:
       - cf44e156-6e42-420f-93ff-c7de7b6ccef6|0
       flowUIDs:
       - b4c89cd2-0584-42fd-9410-41c26acbf142
+      - 
       nodeValues:
       - unityObjectValue: {fileID: 0}
         stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
@@ -219,7 +203,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: Get_Variable
       uid: b51a86d6-86b2-469d-b3d9-ab513435382f
-      position: {x: 959.94025, y: 355.25497}
+      position: {x: 960, y: 357.64502}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -230,7 +214,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: Get_Variable
       uid: 227a9d0c-3c2b-4261-b458-aa325e98c9dc
-      position: {x: 957.94037, y: 478.25497}
+      position: {x: 958, y: 480.64496}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -275,7 +259,7 @@ MonoBehaviour:
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Get_Variable
       uid: df8d8356-6369-450c-bb8f-bd89d4247953
-      position: {x: 251, y: 430}
+      position: {x: 28.530014, y: 298.24008}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -316,7 +300,7 @@ MonoBehaviour:
         stringValue: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|0
     - fullName: UnityEngineAnimator.__GetInteger__SystemString__SystemInt32
       uid: 92e379cd-d74d-42db-9281-c48402b11349
-      position: {x: 1147.4861, y: 385.54965}
+      position: {x: 1147, y: 388.645}
       nodeUIDs:
       - b51a86d6-86b2-469d-b3d9-ab513435382f|0
       - 227a9d0c-3c2b-4261-b458-aa325e98c9dc|0
@@ -340,7 +324,7 @@ MonoBehaviour:
           PublicKeyToken=b77a5c561934e089|False
     - fullName: Get_Variable
       uid: 248445d5-7567-4098-950f-8a800a499e1c
-      position: {x: 1147.4861, y: 520.5497}
+      position: {x: 1135, y: 525.645}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -375,4 +359,4 @@ MonoBehaviour:
     updateOrder: 0
   graphElementData: []
   version: 1.0.0
-  showAssembly: 0
+  showAssembly: 1
