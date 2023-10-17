@@ -131,7 +131,7 @@ MonoBehaviour:
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|IncludeAnim
     - fullName: Event_Custom
       uid: eab197db-344f-49a1-9c1c-8e0b5fab1a46
-      position: {x: 495.48007, y: 223.3225}
+      position: {x: 490.4, y: 217.25}
       nodeUIDs:
       - 
       flowUIDs:
@@ -182,7 +182,7 @@ MonoBehaviour:
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|LateJoin
     - fullName: Event_Custom
       uid: e4c2ee57-9c03-40c4-92d9-61c17a42f367
-      position: {x: 1183.9801, y: 728.6044}
+      position: {x: 1175.9502, y: 724.4001}
       nodeUIDs:
       - 
       flowUIDs:
