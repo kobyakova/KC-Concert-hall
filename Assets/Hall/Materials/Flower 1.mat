@@ -8,14 +8,16 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Flower 1
-  m_Shader: {fileID: 4800000, guid: 784867d15973a4847b1a6048d42c1565, type: 3}
-  m_ShaderKeywords: VIGNETTE_MASKED _LIGHTINGMODE_REALISTIC _RIM2STYLE_POIYOMI _RIMSTYLE_POIYOMI
-    _STOCHASTICMODE_DELIOT_HEITZ
+  m_Shader: {fileID: 4800000, guid: 53abc7a387665c94791a2c76e082dc48, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
+    AllLockedGUIDS: 7e634c3206c40e54a96ef9b814402dfc,6d42d0444ac2d92419dd4d26cdfdcb8f
+    OriginalShader: .poiyomi/Poiyomi 8.1/Poiyomi World
+    RenderType: Opaque
     VRCFallback: StandardDoubleSided
   disabledShaderPasses: []
   m_SavedProperties:
@@ -2125,7 +2127,7 @@ Material:
     - _Set_RimLightMaskChannel: 1
     - _Set_RimLightMaskUV: 0
     - _ShadeColor_Step: 0
-    - _ShaderOptimizerEnabled: 0
+    - _ShaderOptimizerEnabled: 1
     - _ShaderUIWarning0: -0
     - _ShaderUIWarning1: -0
     - _ShadingEnabled: 1

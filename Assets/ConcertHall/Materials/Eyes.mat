@@ -1225,7 +1225,7 @@ Material:
     - _FlipbookColorThemeIndex: 0
     - _FlipbookCrossfadeEnabled: 0
     - _FlipbookCurrentFrame: 0
-    - _FlipbookEmissionStrength: 0
+    - _FlipbookEmissionStrength: 1
     - _FlipbookEndFrame: 0
     - _FlipbookFPS: 8
     - _FlipbookFrameOffset: 0
