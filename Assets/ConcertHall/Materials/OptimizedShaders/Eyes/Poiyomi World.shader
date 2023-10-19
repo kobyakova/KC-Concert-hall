@@ -2513,7 +2513,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi World/4a69f26281be7dd45a738a8
 				poiFragData.baseColor = lerp(poiFragData.baseColor, flipBookPixel.rgb, flipBookPixel.a * float4(1,1,1,1).a * (1.0 /*_FlipbookReplace*/) * flipBookMask * flipbookAlpha);
 				poiFragData.baseColor = poiFragData.baseColor + flipBookPixel.rgb * (0.0 /*_FlipbookAdd*/) * flipBookMask * flipbookAlpha;
 				poiFragData.baseColor = poiFragData.baseColor * lerp(1, flipBookPixel.rgb, flipBookPixel.a * float4(1,1,1,1).a * flipBookMask * (0.0 /*_FlipbookMultiply*/) * flipbookAlpha);
-				float flipbookEmissionStrength = (0.0 /*_FlipbookEmissionStrength*/);
+				float flipbookEmissionStrength = (1.0 /*_FlipbookEmissionStrength*/);
 				#ifdef POI_AUDIOLINK
 				if (poiMods.audioLinkAvailable)
 				{
@@ -5150,7 +5150,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi World/4a69f26281be7dd45a738a8
 				poiFragData.baseColor = lerp(poiFragData.baseColor, flipBookPixel.rgb, flipBookPixel.a * float4(1,1,1,1).a * (1.0 /*_FlipbookReplace*/) * flipBookMask * flipbookAlpha);
 				poiFragData.baseColor = poiFragData.baseColor + flipBookPixel.rgb * (0.0 /*_FlipbookAdd*/) * flipBookMask * flipbookAlpha;
 				poiFragData.baseColor = poiFragData.baseColor * lerp(1, flipBookPixel.rgb, flipBookPixel.a * float4(1,1,1,1).a * flipBookMask * (0.0 /*_FlipbookMultiply*/) * flipbookAlpha);
-				float flipbookEmissionStrength = (0.0 /*_FlipbookEmissionStrength*/);
+				float flipbookEmissionStrength = (1.0 /*_FlipbookEmissionStrength*/);
 				#ifdef POI_AUDIOLINK
 				if (poiMods.audioLinkAvailable)
 				{
@@ -7408,7 +7408,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi World/4a69f26281be7dd45a738a8
 				poiFragData.baseColor = lerp(poiFragData.baseColor, flipBookPixel.rgb, flipBookPixel.a * float4(1,1,1,1).a * (1.0 /*_FlipbookReplace*/) * flipBookMask * flipbookAlpha);
 				poiFragData.baseColor = poiFragData.baseColor + flipBookPixel.rgb * (0.0 /*_FlipbookAdd*/) * flipBookMask * flipbookAlpha;
 				poiFragData.baseColor = poiFragData.baseColor * lerp(1, flipBookPixel.rgb, flipBookPixel.a * float4(1,1,1,1).a * flipBookMask * (0.0 /*_FlipbookMultiply*/) * flipbookAlpha);
-				float flipbookEmissionStrength = (0.0 /*_FlipbookEmissionStrength*/);
+				float flipbookEmissionStrength = (1.0 /*_FlipbookEmissionStrength*/);
 				#ifdef POI_AUDIOLINK
 				if (poiMods.audioLinkAvailable)
 				{
@@ -9567,7 +9567,7 @@ Shader "Hidden/Locked/.poiyomi/Poiyomi 8.1/Poiyomi World/4a69f26281be7dd45a738a8
 				poiFragData.baseColor = lerp(poiFragData.baseColor, flipBookPixel.rgb, flipBookPixel.a * float4(1,1,1,1).a * (1.0 /*_FlipbookReplace*/) * flipBookMask * flipbookAlpha);
 				poiFragData.baseColor = poiFragData.baseColor + flipBookPixel.rgb * (0.0 /*_FlipbookAdd*/) * flipBookMask * flipbookAlpha;
 				poiFragData.baseColor = poiFragData.baseColor * lerp(1, flipBookPixel.rgb, flipBookPixel.a * float4(1,1,1,1).a * flipBookMask * (0.0 /*_FlipbookMultiply*/) * flipbookAlpha);
-				float flipbookEmissionStrength = (0.0 /*_FlipbookEmissionStrength*/);
+				float flipbookEmissionStrength = (1.0 /*_FlipbookEmissionStrength*/);
 				#ifdef POI_AUDIOLINK
 				if (poiMods.audioLinkAvailable)
 				{
