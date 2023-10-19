@@ -39,7 +39,7 @@ namespace AmplifyShaderEditor
 
 			string normalMapUnpackMode = string.Empty;
 			string scaleValue = isScaledNormal?m_inputPorts[ 1 ].GeneratePortInstructions( ref dataCollector ):"1.0";
-			normalMapUnpackMode = GeneratorUtils.GenerateUnpackNormalStr( ref dataCollector, CurrentPrecisionType, UniqueId, OutputId, src, isScaledNormal, scaleValue );
+			normalMapUnpackMode = string.Format( TemplateHelperFunctions.CreateUnpackNormalStr( dataCollector, isScaledNormal, scaleValue ), src);
 			if( isScaledNormal && !( dataCollector.IsTemplate && dataCollector.IsSRP ) )
 			{
 				dataCollector.AddToIncludes( UniqueId, Constants.UnityStandardUtilsLibFuncs );
@@ -53,9 +53,9 @@ namespace AmplifyShaderEditor
 			}
 
 
-			if ( outputUsage > 1 && !dataCollector.IsSRP )
+			if ( outputUsage > 1 )
 			{
-				string varName = "localUnpackNormal" + OutputId;
+				string varName = "localUnpackNormal" + UniqueId;
 				dataCollector.AddLocalVariable( UniqueId, "float3 " + varName + " = " + normalMapUnpackMode + ";" );
 				return GetOutputVectorItem( 0, outputId, varName );
 			}

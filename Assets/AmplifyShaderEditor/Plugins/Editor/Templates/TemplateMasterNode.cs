@@ -41,9 +41,6 @@ namespace AmplifyShaderEditor
 		private TemplatesBlendModule m_blendOpHelper = new TemplatesBlendModule();
 
 		[SerializeField]
-		private TemplateAlphaToMaskModule m_alphaToMaskHelper = new TemplateAlphaToMaskModule();
-
-		[SerializeField]
 		private TemplateCullModeModule m_cullModeHelper = new TemplateCullModeModule();
 
 		[SerializeField]
@@ -64,7 +61,6 @@ namespace AmplifyShaderEditor
 			m_masterNodeCategory = 1;// First Template
 			m_marginPreviewLeft = 20;
 			m_insideSize.y = 60;
-			m_customPrecision = true;
 		}
 
 		public override void ReleaseResources()
@@ -90,9 +86,6 @@ namespace AmplifyShaderEditor
 		{
 			if( m_currentTemplate.BlendData.DataCheck == TemplateDataCheck.Valid )
 				m_blendOpHelper.ConfigureFromTemplateData( m_currentTemplate.BlendData );
-
-			if( m_currentTemplate.AlphaToMaskData.DataCheck == TemplateDataCheck.Valid )
-				m_alphaToMaskHelper.ConfigureFromTemplateData( m_currentTemplate.AlphaToMaskData );
 
 			if( m_currentTemplate.CullModeData.DataCheck == TemplateDataCheck.Valid )
 				m_cullModeHelper.ConfigureFromTemplateData( m_currentTemplate.CullModeData );
@@ -256,10 +249,6 @@ namespace AmplifyShaderEditor
 			bool generalIsVisible = ContainerGraph.ParentWindow.InnerWindowVariables.ExpandedGeneralShaderOptions;
 			NodeUtils.DrawPropertyGroup( ref generalIsVisible, GeneralFoldoutStr, DrawGeneralOptions );
 			ContainerGraph.ParentWindow.InnerWindowVariables.ExpandedGeneralShaderOptions = generalIsVisible;
-
-			if( m_currentTemplate.AlphaToMaskData.DataCheck == TemplateDataCheck.Valid )
-				m_alphaToMaskHelper.Draw( this );
-
 			if( m_currentTemplate.BlendData.DataCheck == TemplateDataCheck.Valid )
 				m_blendOpHelper.Draw( this );
 
@@ -310,11 +299,9 @@ namespace AmplifyShaderEditor
 			DrawShaderName();
 			DrawCurrentShaderType();
 			EditorGUI.BeginChangeCheck();
-			DrawPrecisionProperty( false );
+			DrawPrecisionProperty();
 			if( EditorGUI.EndChangeCheck() )
 				ContainerGraph.CurrentPrecision = m_currentPrecisionType;
-
-			DrawSamplingMacros();
 
 			if( m_currentTemplate.CullModeData.DataCheck == TemplateDataCheck.Valid )
 				m_cullModeHelper.Draw( this );
@@ -515,9 +502,9 @@ namespace AmplifyShaderEditor
 				validBody = m_currentTemplate.FillTemplateBody( m_currentTemplate.BlendData.BlendOpId, ref shaderBody, m_blendOpHelper.CurrentBlendOp ) && validBody;
 			}
 
-			if( m_currentTemplate.AlphaToMaskData.DataCheck == TemplateDataCheck.Valid )
+			if( m_currentTemplate.BlendData.ValidAlphaToMask )
 			{
-				validBody = m_currentTemplate.FillTemplateBody( m_currentTemplate.AlphaToMaskData.AlphaToMaskId, ref shaderBody, m_alphaToMaskHelper.GenerateShaderData( false ) ) && validBody;
+				validBody = m_currentTemplate.FillTemplateBody( m_currentTemplate.BlendData.AlphaToMaskId, ref shaderBody, m_blendOpHelper.CurrentAlphaToMask ) && validBody;
 			}
 
 			if( m_currentTemplate.DepthData.ValidZWrite )
@@ -674,18 +661,12 @@ namespace AmplifyShaderEditor
 					if( m_currentTemplate.TagData.DataCheck == TemplateDataCheck.Valid )
 						m_tagsHelper.ReadFromString( ref m_currentReadParamIdx, ref nodeParams );
 				}
-
-				if( UIUtils.CurrentShaderVersion() > 18302 )
-					SamplingMacros = Convert.ToBoolean( GetCurrentParam( ref nodeParams ) );
-				else
-					SamplingMacros = false;
 			}
 			catch( Exception e )
 			{
 				Debug.LogException( e, this );
 			}
 			m_containerGraph.CurrentCanvasMode = NodeAvailability.TemplateShader;
-			m_containerGraph.CurrentPrecision = m_currentPrecisionType;
 		}
 
 		public override void WriteToString( ref string nodeInfo, ref string connectionsInfo )
@@ -745,8 +726,6 @@ namespace AmplifyShaderEditor
 			{
 				m_tagsHelper.WriteToString( ref nodeInfo );
 			}
-
-			IOUtils.AddFieldValueToString( ref nodeInfo, m_samplingMacros );
 		}
 
 		public override void Destroy()
@@ -754,7 +733,6 @@ namespace AmplifyShaderEditor
 			base.Destroy();
 			m_currentTemplate = null;
 			m_blendOpHelper = null;
-			m_alphaToMaskHelper = null;
 			m_cullModeHelper = null;
 			m_colorMaskHelper.Destroy();
 			m_colorMaskHelper = null;

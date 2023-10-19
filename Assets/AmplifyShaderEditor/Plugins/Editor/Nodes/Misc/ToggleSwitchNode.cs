@@ -13,8 +13,7 @@ namespace AmplifyShaderEditor
 	{
 		private const string InputPortName = "In ";
 		private const string CurrSelectedStr = "Toggle Value";
-		//private const string LerpOp = "lerp({0},{1},{2})";
-		private const string LerpOp = "(( {2} )?( {1} ):( {0} ))";
+		private const string LerpOp = "lerp({0},{1},{2})";
 
 		[SerializeField]
 		private string[] AvailableInputsLabels = { "In 0", "In 1" };
@@ -62,8 +61,6 @@ namespace AmplifyShaderEditor
 
 			m_allowPropertyDuplicates = true;
 			m_showAutoRegisterUI = false;
-
-			m_srpBatcherCompatible = true;
 		}
 
 		protected override void OnUniqueIDAssigned()
@@ -163,7 +160,6 @@ namespace AmplifyShaderEditor
 				m_currentSelectedInput = EditorGUIIntPopup( m_varRect, m_currentSelectedInput, AvailableInputsLabels, AvailableInputsValues, UIUtils.SwitchNodePopUp );
 				if ( EditorGUI.EndChangeCheck() )
 				{
-					PreviewIsDirty = true;
 					UpdateConnection();
 					m_requireMaterialUpdate = true;
 					m_editing = false;
@@ -207,7 +203,7 @@ namespace AmplifyShaderEditor
 		public override string GenerateShaderForOutput( int outputId, ref MasterNodeDataCollector dataCollector, bool ignoreLocalvar )
 		{
 			base.GenerateShaderForOutput( outputId, ref dataCollector, ignoreLocalvar );
-			m_precisionString = UIUtils.PrecisionWirePortToCgType( CurrentPrecisionType, m_outputPorts[ 0 ].DataType );
+			m_precisionString = UIUtils.FinalPrecisionWirePortToCgType( m_currentPrecisionType, m_outputPorts[ 0 ].DataType );
 
 			string resultA = m_inputPorts[ 0 ].GenerateShaderForOutput( ref dataCollector, m_mainDataType, ignoreLocalvar, true );
 			string resultB = m_inputPorts[ 1 ].GenerateShaderForOutput( ref dataCollector, m_mainDataType, ignoreLocalvar, true );
@@ -240,12 +236,12 @@ namespace AmplifyShaderEditor
 		public override string GetUniformValue()
 		{
 			int index = m_containerGraph.IsSRP ? 1 : 0;
-			return string.Format( Constants.UniformDec[ index ], UIUtils.PrecisionWirePortToCgType( CurrentPrecisionType, WirePortDataType.FLOAT ), m_propertyName );
+			return string.Format( Constants.UniformDec[ index ], UIUtils.FinalPrecisionWirePortToCgType( m_currentPrecisionType, WirePortDataType.FLOAT ), m_propertyName );
 		}
 
 		public override bool GetUniformData( out string dataType, out string dataName, ref bool fullValue )
 		{
-			dataType = UIUtils.PrecisionWirePortToCgType( CurrentPrecisionType, WirePortDataType.FLOAT );
+			dataType = UIUtils.FinalPrecisionWirePortToCgType( m_currentPrecisionType, WirePortDataType.FLOAT );
 			dataName = m_propertyName;
 			return true;
 		}
@@ -270,11 +266,8 @@ namespace AmplifyShaderEditor
 
 		public override void ForceUpdateFromMaterial( Material material )
 		{
-			if( UIUtils.IsProperty( m_currentParameterType ) && material.HasProperty( m_propertyName ) )
-			{
-				m_currentSelectedInput = (int)material.GetFloat( m_propertyName );
-				PreviewIsDirty = true;
-			}
+			if ( UIUtils.IsProperty( m_currentParameterType ) && material.HasProperty( m_propertyName ) )
+				m_currentSelectedInput = ( int ) material.GetFloat( m_propertyName );
 		}
 
 		public override string GetPropertyValStr()

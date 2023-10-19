@@ -28,8 +28,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -6.44, y: 12.418, z: 6.96}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_Children:
-  - {fileID: 6449354920688157747}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -81,69 +80,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &4561673508578761919
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6449354920688157747}
-  - component: {fileID: 9062775583254056967}
-  m_Layer: 0
-  m_Name: Spot Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6449354920688157747
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4561673508578761919}
-  m_LocalRotation: {x: 3.4106054e-13, y: -1, z: -0.00000005960465, w: 0.000002750082}
-  m_LocalPosition: {x: 0, y: 0, z: -15.58}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4326933858315263856}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -180.00002, z: 0}
---- !u!114 &9062775583254056967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4561673508578761919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57f24a4aaa0761b45ba25e7e5108e2c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  UID: 862116380
-  color: {r: 1, g: 0.96613157, b: 0.901, a: 1}
-  intensity: 0.2
-  shadowSpread: 0.3
-  cutoff: 20
-  realisticFalloff: 0
-  legacySampling: 1
-  samples: 8
-  projMode: 1
-  cookie: {fileID: 2800000, guid: 3a66602b8cc7fdd4ab57d07b4176432b, type: 3}
-  angle: 90
-  innerAngle: 0
-  cubemap: {fileID: 0}
-  iesFile: {fileID: 0}
-  bitmask: 1
-  bakeToIndirect: 0
-  shadowmask: 0
-  shadowmaskFalloff: 0
-  indirectIntensity: 1
-  falloffMinRadius: 1
-  shadowmaskGroupID: 0
-  directionMode: 0
-  maskChannel: 0
