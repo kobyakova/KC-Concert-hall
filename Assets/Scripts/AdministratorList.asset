@@ -310,4 +310,4 @@ MonoBehaviour:
     updateOrder: 0
   graphElementData: []
   version: 1.0.0
-  showAssembly: 1
+  showAssembly: 0
