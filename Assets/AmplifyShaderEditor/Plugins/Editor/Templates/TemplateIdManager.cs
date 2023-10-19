@@ -19,15 +19,11 @@ namespace AmplifyShaderEditor
 	{
 		public string Tag = string.Empty;
 		public string Replacement = string.Empty;
-		public string Output = string.Empty;
 		public TemplateTag( string tag, string replacement = null )
 		{
 			Tag = tag;
 			if( replacement != null )
-			{
 				Replacement = replacement;
-				Output = replacement;
-			}
 		}
 	}
 
@@ -194,7 +190,6 @@ namespace AmplifyShaderEditor
 			for( int i = 0; i < count; i++ )
 			{
 				finalShaderBody = finalShaderBody.Replace( m_registeredTags[ i ].Tag, m_registeredTags[ i ].Replacement );
-				m_registeredTags[ i ].Replacement = m_registeredTags[ i ].Output;
 			}
 
 			//finalShaderBody = finalShaderBody.Replace( TemplatesManager.TemplateExcludeFromGraphTag, string.Empty );
@@ -230,7 +225,5 @@ namespace AmplifyShaderEditor
 			get { return m_shaderBody; }
 			set { m_shaderBody = value; }
 		}
-
-		public List<TemplateTag> RegisteredTags { get { return m_registeredTags; } set { m_registeredTags = value; } }
 	}
 }

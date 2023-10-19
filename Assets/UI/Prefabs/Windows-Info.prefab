@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1582743466290337755}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Windows-Info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 9053685593057962381}
   - component: {fileID: 9053685593057962382}
   - component: {fileID: 9053685593057962383}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Window-Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 9053685593630711426}
   - component: {fileID: 9053685593630711424}
   - component: {fileID: 9053685593630711425}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 9053685593692862736}
   - component: {fileID: 9053685593692862734}
   - component: {fileID: 9053685593692862735}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9053685594335233928}
   - component: {fileID: 9053685594335233927}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}

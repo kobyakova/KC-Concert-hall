@@ -24,12 +24,6 @@ namespace AmplifyShaderEditor
 		private bool m_fetchDataId = false;
 		private UpperLeftWidgetHelper m_upperLeftWidgetHelper = new UpperLeftWidgetHelper();
 
-		protected override void CommonInit( int uniqueId )
-		{
-			base.CommonInit( uniqueId );
-			m_autoWrapProperties = true;
-		}
-
 		void FetchDataId()
 		{
 			if( m_localVarsData != null && m_localVarsData.Count > 0 )
@@ -181,7 +175,7 @@ namespace AmplifyShaderEditor
 		{
 			if( m_localVarsData[ m_currentDataIdx ].Category != dataCollector.PortCategory )
 			{
-				UIUtils.ShowMessage( UniqueId, string.Format( "Local Var {0} can only work on ports of type {1}", m_localVarsData[ m_currentDataIdx ].LocalVarName, m_localVarsData[ m_currentDataIdx ].Category ) );
+				UIUtils.ShowMessage( string.Format( "Local Var {0} can only work on ports of type {1}", m_localVarsData[ m_currentDataIdx ].LocalVarName, m_localVarsData[ m_currentDataIdx ].Category ) );
 				return m_outputPorts[ 0 ].ErrorValue;
 			}
 
@@ -191,7 +185,7 @@ namespace AmplifyShaderEditor
 					dataCollector.TemplateDataCollectorInstance.MultipassPassIdx != PassIdx
 					)
 				{
-					UIUtils.ShowMessage( UniqueId, string.Format( "{0} is only intended for subshader {1} and pass {2}", m_dataLabels[ m_currentDataIdx ], SubShaderIdx, PassIdx ) );
+					UIUtils.ShowMessage( string.Format( "{0} is only intended for subshader {1} and pass {2}", m_dataLabels[ m_currentDataIdx ], SubShaderIdx, PassIdx ) );
 					return m_outputPorts[ outputId ].ErrorValue;
 				}
 			}

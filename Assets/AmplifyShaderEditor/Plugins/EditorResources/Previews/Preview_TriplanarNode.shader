@@ -25,7 +25,6 @@ Shader "Hidden/TriplanarNode"
 			sampler2D _D;
 			sampler2D _E;
 			float _IsNormal;
-			float _IsTangent;
 			float _IsSpherical;
 
 			inline float3 TriplanarSamplingCNF( sampler2D topTexMap, sampler2D midTexMap, sampler2D botTexMap, float3 worldPos, float3 worldNormal, float falloff, float tilling )
@@ -85,9 +84,8 @@ Shader "Hidden/TriplanarNode"
 						triplanar.xyz = TriplanarSamplingCNF( _A, _A, _A, worldPos, worldNormal, falloff, tilling );
 					else
 						triplanar.xyz = TriplanarSamplingCNF( _A, _B, _C, worldPos, worldNormal, falloff, tilling );
-					
-					if( _IsTangent == 1 )
-						triplanar.xyz = mul( worldToTangent, triplanar.xyz );
+
+					triplanar.xyz = mul( worldToTangent, triplanar.xyz );
 				}
 				else 
 				{

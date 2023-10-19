@@ -76,19 +76,10 @@ namespace AmplifyShaderEditor
 
 		public override void RenderNodePreview()
 		{
-			//Runs at least one time
 			if( !m_initialized )
-			{
-				// nodes with no preview don't update at all
-				PreviewIsDirty = false;
-				return;
-			}
-
-			if( !PreviewIsDirty )
 				return;
 
 			SetPreviewInputs();
-
 			PreviewMaterial.SetInt( "_CustomUVs", m_inputPorts[ 0 ].IsConnected ? 1 : 0 );
 
 			if( m_proceduralMaterial == null )
@@ -109,8 +100,6 @@ namespace AmplifyShaderEditor
 					Graphics.Blit( null, m_outputPorts[ i ].OutputPreviewTexture, PreviewMaterial, 0 );
 				RenderTexture.active = temp;
 			}
-
-			PreviewIsDirty = m_continuousPreviewRefresh;
 		}
 
 		public override void OnOutputPortConnected( int portId, int otherNodeId, int otherPortId )
@@ -215,7 +204,6 @@ namespace AmplifyShaderEditor
 					newValue = EditorGUIUtility.GetObjectPickerObject();
 					if( newValue != (UnityEngine.Object)m_proceduralMaterial )
 					{
-						PreviewIsDirty = true;
 						UndoRecordObject( "Changing value EditorGUIObjectField on node Substance Sample" );
 
 						m_proceduralMaterial = newValue != null ? (ProceduralMaterial)newValue : null;
@@ -228,7 +216,6 @@ namespace AmplifyShaderEditor
 					newValue = EditorGUIUtility.GetObjectPickerObject();
 					if( newValue != (UnityEngine.Object)m_proceduralMaterial )
 					{
-						PreviewIsDirty = true;
 						UndoRecordObject( "Changing value EditorGUIObjectField on node Substance Sample" );
 
 						m_proceduralMaterial = newValue != null ? (ProceduralMaterial)newValue : null;
@@ -491,7 +478,7 @@ namespace AmplifyShaderEditor
 			string value = string.Format( "tex2D{0}({1}, {2})", ( isVertex ? "lod" : string.Empty ), textures[ outputId ].name, GetUVCoords( ref dataCollector, ignoreLocalvar, uvPropertyName ) );
 			if( m_autoNormal && m_textureTypes[ outputId ] == ProceduralOutputType.Normal )
 			{
-				value = GeneratorUtils.GenerateUnpackNormalStr( ref dataCollector, CurrentPrecisionType, UniqueId, OutputId, value, false, "1.0" );
+				value = string.Format( TemplateHelperFunctions.CreateUnpackNormalStr( dataCollector,false,"1.0"), value );
 			}
 
 			dataCollector.AddPropertyNode( this );
@@ -514,7 +501,7 @@ namespace AmplifyShaderEditor
 				if( dataCollector.IsTemplate )
 				{
 					string propertyHelperVar = propertyName + "_ST";
-					dataCollector.AddToUniforms( UniqueId, "float4", propertyHelperVar, dataCollector.IsSRP );
+					dataCollector.AddToUniforms( UniqueId, "float4", propertyHelperVar );
 					string uvName = string.Empty;
 					if( dataCollector.TemplateDataCollectorInstance.HasUV( m_textureCoordSet ) )
 					{
@@ -532,11 +519,11 @@ namespace AmplifyShaderEditor
 						string lodLevel = "0";
 
 						value = "float4( " + value + ", 0 , " + lodLevel + " )";
-						dataCollector.AddLocalVariable( UniqueId, CurrentPrecisionType, WirePortDataType.FLOAT4, uvChannelName, value );
+						dataCollector.AddLocalVariable( UniqueId, m_currentPrecisionType, WirePortDataType.FLOAT4, uvChannelName, value );
 					}
 					else
 					{
-						dataCollector.AddLocalVariable( UniqueId, CurrentPrecisionType, WirePortDataType.FLOAT2, uvChannelName, string.Format( Constants.TilingOffsetFormat, uvName, propertyHelperVar + ".xy", propertyHelperVar + ".zw" ) );
+						dataCollector.AddLocalVariable( UniqueId, m_currentPrecisionType, WirePortDataType.FLOAT2, uvChannelName, string.Format( Constants.TilingOffsetFormat, uvName, propertyHelperVar + ".xy", propertyHelperVar + ".zw" ) );
 					}
 				}
 				else
@@ -629,7 +616,7 @@ namespace AmplifyShaderEditor
 				}
 				else
 				{
-					UIUtils.ShowMessage( UniqueId, "Substance not found ", MessageSeverity.Error );
+					UIUtils.ShowMessage( "Substance not found ", MessageSeverity.Error );
 				}
 			}
 		}
@@ -663,7 +650,7 @@ namespace AmplifyShaderEditor
 	[NodeAttributes( "Substance Sample", "Textures", "Samples a procedural material", KeyCode.None, true, 0, int.MaxValue, typeof( SubstanceGraph ), typeof( Substance.Game.Substance ) )]
 	public sealed class SubstanceSamplerNode : PropertyNode
 	{
-		private const string NormalMapCheck = "normal";
+		private const string NormalMapCheck = "_normal";
 		private const string GlobalVarDecStr = "uniform sampler2D {0};";
 		private const string PropertyDecStr = "{0}(\"{1}\", 2D) = \"white\"";
 
@@ -912,9 +899,7 @@ namespace AmplifyShaderEditor
 
 					for( int i = 0; i < texCount; i++ )
 					{
-						
-						//EditorGUI.DrawPreviewTexture( individuals, m_textures[ m_outputConns[ i ] ], null, ScaleMode.ScaleAndCrop );
-						EditorGUI.DrawPreviewTexture( individuals, m_outputPorts[ m_outputConns[ i ] ].OutputPreviewTexture, null, ScaleMode.ScaleAndCrop );
+						EditorGUI.DrawPreviewTexture( individuals, m_textures[ m_outputConns[ i ] ], null, ScaleMode.ScaleAndCrop );
 						individuals.y += individuals.height;
 					}
 				}
@@ -1028,8 +1013,7 @@ namespace AmplifyShaderEditor
 				for( int i = 0; i < textures.Count; i++ )
 				{
 					//TODO: Replace for a more efficient test as soon as Laurent gives more infos
-					bool isNormal = textures[ i ].format == TextureFormat.BC5 || textures[ i ].name.EndsWith( NormalMapCheck );
-					m_textureTypes[ i ] = isNormal?ASEProceduralOutputType.Normal:ASEProceduralOutputType.Color;
+					m_textureTypes[ i ] = textures[ i ].name.EndsWith( NormalMapCheck )?ASEProceduralOutputType.Normal:ASEProceduralOutputType.Color;
 
 					WirePortDataType portType = ( m_autoNormal && m_textureTypes[ i ] == ASEProceduralOutputType.Normal ) ? WirePortDataType.FLOAT3 : WirePortDataType.COLOR;
 					string newName = textures[ i ].name.Replace( nameToRemove, string.Empty );
@@ -1144,7 +1128,7 @@ namespace AmplifyShaderEditor
 			string value = string.Format( "tex2D{0}({1}, {2})", ( isVertex ? "lod" : string.Empty ), propertyName, GetUVCoords( ref dataCollector, ignoreLocalvar, uvPropertyName ) );
 			if( m_autoNormal && m_textureTypes[ outputId ] == ASEProceduralOutputType.Normal )
 			{
-				value = GeneratorUtils.GenerateUnpackNormalStr( ref dataCollector, CurrentPrecisionType, UniqueId, OutputId, value, false, "1.0" );
+				value = string.Format( TemplateHelperFunctions.CreateUnpackNormalStr( dataCollector, false, "1.0" ), value );
 			}
 
 			dataCollector.AddPropertyNode( this );
@@ -1167,16 +1151,8 @@ namespace AmplifyShaderEditor
 				if( dataCollector.IsTemplate )
 				{
 					string propertyHelperVar = propertyName + "_ST";
-					dataCollector.AddToUniforms( UniqueId, "float4", propertyHelperVar, dataCollector.IsSRP );
+					dataCollector.AddToUniforms( UniqueId, "float4", propertyHelperVar );
 					string uvName = string.Empty;
-					string result = string.Empty;
-					if( dataCollector.TemplateDataCollectorInstance.GetCustomInterpolatedData( TemplateHelperFunctions.IntToUVChannelInfo[ m_textureCoordSet ], WirePortDataType.FLOAT4, PrecisionType.Float, ref result, false, dataCollector.PortCategory ) )
-					{
-						if( m_inputPorts[ 0 ].DataType != WirePortDataType.FLOAT4 )
-							result += UIUtils.GetAutoSwizzle( m_inputPorts[ 0 ].DataType );
-						uvName = result;
-					}
-					else
 					if( dataCollector.TemplateDataCollectorInstance.HasUV( m_textureCoordSet ) )
 					{
 						uvName = dataCollector.TemplateDataCollectorInstance.GetUVName( m_textureCoordSet );
@@ -1317,22 +1293,6 @@ namespace AmplifyShaderEditor
 			IOUtils.AddFieldValueToString( ref nodeInfo, guid );
 			IOUtils.AddFieldValueToString( ref nodeInfo, m_textureCoordSet );
 			IOUtils.AddFieldValueToString( ref nodeInfo, m_autoNormal );
-		}
-
-		public override void RefreshExternalReferences()
-		{
-			base.RefreshExternalReferences();
-			if( m_substanceGraph != null )
-			{
-				int count = m_outputPorts.Count;
-				for( int i = 0; i < count; i++ )
-				{
-					if( m_autoNormal && m_textureTypes[ i ] == ASEProceduralOutputType.Normal )
-						m_outputPorts[ i ].ChangeType( WirePortDataType.FLOAT3, false );
-					else
-						m_outputPorts[ i ].ChangeType( WirePortDataType.FLOAT4, false );
-				}
-			}
 		}
 
 		public SubstanceGraph SubstanceGraph
