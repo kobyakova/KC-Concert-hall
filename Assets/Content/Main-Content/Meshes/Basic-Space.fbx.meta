@@ -29,7 +29,8 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    extraUserProperties: []
+    extraUserProperties:
+    - '#BAKERY{"meshName":["Wall-1","Wall-Arc-1","Wall-Arc-2","Wall-Box-Exhibition","Wall-Small","Railing","Stairs","Wall-Stairs"],"padding":[22,15,11,2,14,52,20,24],"unwrapper":[1,1,1,1,1,1,1,1]}'
     clipAnimations: []
     isReadable: 0
   meshes:

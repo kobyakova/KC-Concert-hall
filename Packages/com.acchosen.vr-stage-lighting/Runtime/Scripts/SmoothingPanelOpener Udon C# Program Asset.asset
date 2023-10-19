@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: SmoothingPanelOpener Udon C# Program Asset
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 84cabf10c1c2e81469fb42c3980f403c,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 57b1380a40f713748bedbc462d61b6cd,
     type: 2}
   udonAssembly: 
   assemblyError: 
