@@ -1609,6 +1609,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 20.616667
         value: -3688.001
+        inSlope: -287.4098
+        outSlope: -287.4098
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 20.666666
+        value: -5052
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2752,6 +2761,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 4.733333
         value: -2433
+        inSlope: -53.66772
+        outSlope: -53.66772
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 20.666666
+        value: -3389
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -2854,6 +2872,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 8.65
         value: -1401
+        inSlope: -111.89032
+        outSlope: -111.89032
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 20.666666
+        value: -1877
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -3213,6 +3240,53 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_IsActive
     path: PortalsSys/PortalsGroup
+    classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -24
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 20.666666
+        value: -51
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_AnchoredPosition.y
+    path: Canvases/Left/Text (7)
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: Rewards/Light
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves:
@@ -3743,6 +3817,20 @@ AnimationClip:
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 1373553902
+      attribute: 2086281974
+      script: {fileID: 0}
+      typeID: 1
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 2921976547
+      attribute: 538195251
+      script: {fileID: 0}
+      typeID: 224
+      customType: 28
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 4061678391
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -7071,6 +7159,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 20.616667
         value: -3688.001
+        inSlope: -287.4098
+        outSlope: -287.4098
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 20.666666
+        value: -5052
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -8214,6 +8311,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 4.733333
         value: -2433
+        inSlope: -53.66772
+        outSlope: -53.66772
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 20.666666
+        value: -3389
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -8427,6 +8533,15 @@ AnimationClip:
       - serializedVersion: 3
         time: 8.65
         value: -1401
+        inSlope: -111.89032
+        outSlope: -111.89032
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 20.666666
+        value: -1877
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -9785,6 +9900,53 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_IsActive
     path: PortalsSys/PortalsGroup
+    classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -24
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 20.666666
+        value: -51
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_AnchoredPosition.y
+    path: Canvases/Left/Text (7)
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: Rewards/Light
     classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves:
