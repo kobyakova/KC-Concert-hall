@@ -109,7 +109,7 @@ Material:
     - _Delay: 0
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Emission: 3
+    - _Emission: 5
     - _EnableAudioLink: 1
     - _EnableAutogain: 1
     - _EnableColorChord: 0

@@ -261,101 +261,6 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_Enabled
-    path: Acts/RedGroup
-    classID: 114
-    script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: Acts/EmptyGroup
-    classID: 114
-    script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: Acts/WhiteBlock
-    classID: 114
-    script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: Acts/WarmGroup
-    classID: 114
-    script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: Acts/MixGroupOne
-    classID: 114
-    script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
     attribute: m_IsActive
     path: DJPlace
     classID: 1
@@ -399,41 +304,6 @@ AnimationClip:
       value: {fileID: 2100000, guid: 854ad211fde62e64b86a2d3ad6f32863, type: 2}
     attribute: m_Materials.Array.data[0]
     path: Acts/Act 4
-    classID: 23
-    script: {fileID: 0}
-  - curve:
-    - time: 0
-      value: {fileID: 2100000, guid: 2c77ce053e3c830448937a86b6dff09a, type: 2}
-    attribute: m_Materials.Array.data[0]
-    path: Acts/RedGroup
-    classID: 23
-    script: {fileID: 0}
-  - curve:
-    - time: 0
-      value: {fileID: 2100000, guid: 2c77ce053e3c830448937a86b6dff09a, type: 2}
-    attribute: m_Materials.Array.data[0]
-    path: Acts/EmptyGroup
-    classID: 23
-    script: {fileID: 0}
-  - curve:
-    - time: 0
-      value: {fileID: 2100000, guid: 2c77ce053e3c830448937a86b6dff09a, type: 2}
-    attribute: m_Materials.Array.data[0]
-    path: Acts/WhiteBlock
-    classID: 23
-    script: {fileID: 0}
-  - curve:
-    - time: 0
-      value: {fileID: 2100000, guid: 2c77ce053e3c830448937a86b6dff09a, type: 2}
-    attribute: m_Materials.Array.data[0]
-    path: Acts/WarmGroup
-    classID: 23
-    script: {fileID: 0}
-  - curve:
-    - time: 0
-      value: {fileID: 2100000, guid: 2c77ce053e3c830448937a86b6dff09a, type: 2}
-    attribute: m_Materials.Array.data[0]
-    path: Acts/MixGroupOne
     classID: 23
     script: {fileID: 0}
   - curve:
@@ -928,14 +798,14 @@ AnimationClip:
     script: {fileID: 0}
   - curve:
     - time: 0
-      value: {fileID: 2100000, guid: eff8d95f3629fea4b836b8a3e5b6b52a, type: 2}
+      value: {fileID: 0}
     attribute: m_Materials.Array.data[0]
     path: ProTV Standard/AVPro1080p/Room (1)/Main Screen
     classID: 23
     script: {fileID: 0}
   - curve:
     - time: 0
-      value: {fileID: 2100000, guid: eff8d95f3629fea4b836b8a3e5b6b52a, type: 2}
+      value: {fileID: 0}
     attribute: m_Materials.Array.data[0]
     path: ScreenCurtain
     classID: 23
@@ -969,41 +839,6 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 161850533
-      attribute: 3305885265
-      script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-      typeID: 114
-      customType: 24
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 1330919661
-      attribute: 3305885265
-      script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-      typeID: 114
-      customType: 24
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 3752007536
-      attribute: 3305885265
-      script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-      typeID: 114
-      customType: 24
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 4012032564
-      attribute: 3305885265
-      script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-      typeID: 114
-      customType: 24
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 2625835263
-      attribute: 3305885265
-      script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-      typeID: 114
-      customType: 24
-      isPPtrCurve: 0
-    - serializedVersion: 2
       path: 4027919562
       attribute: 2086281974
       script: {fileID: 0}
@@ -1033,41 +868,6 @@ AnimationClip:
       isPPtrCurve: 1
     - serializedVersion: 2
       path: 1605657145
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 23
-      customType: 21
-      isPPtrCurve: 1
-    - serializedVersion: 2
-      path: 161850533
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 23
-      customType: 21
-      isPPtrCurve: 1
-    - serializedVersion: 2
-      path: 1330919661
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 23
-      customType: 21
-      isPPtrCurve: 1
-    - serializedVersion: 2
-      path: 3752007536
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 23
-      customType: 21
-      isPPtrCurve: 1
-    - serializedVersion: 2
-      path: 4012032564
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 23
-      customType: 21
-      isPPtrCurve: 1
-    - serializedVersion: 2
-      path: 2625835263
       attribute: 0
       script: {fileID: 0}
       typeID: 23
@@ -1651,11 +1451,6 @@ AnimationClip:
     - {fileID: 2100000, guid: a4491603fa30a5845b28efe00501c2ec, type: 2}
     - {fileID: 2100000, guid: a4491603fa30a5845b28efe00501c2ec, type: 2}
     - {fileID: 2100000, guid: 854ad211fde62e64b86a2d3ad6f32863, type: 2}
-    - {fileID: 2100000, guid: 2c77ce053e3c830448937a86b6dff09a, type: 2}
-    - {fileID: 2100000, guid: 2c77ce053e3c830448937a86b6dff09a, type: 2}
-    - {fileID: 2100000, guid: 2c77ce053e3c830448937a86b6dff09a, type: 2}
-    - {fileID: 2100000, guid: 2c77ce053e3c830448937a86b6dff09a, type: 2}
-    - {fileID: 2100000, guid: 2c77ce053e3c830448937a86b6dff09a, type: 2}
     - {fileID: 2100000, guid: acb7e60239e576d4b931c97e830f2ed3, type: 2}
     - {fileID: 2100000, guid: acb7e60239e576d4b931c97e830f2ed3, type: 2}
     - {fileID: 2100000, guid: acb7e60239e576d4b931c97e830f2ed3, type: 2}
@@ -1726,8 +1521,8 @@ AnimationClip:
     - {fileID: 2100000, guid: acb7e60239e576d4b931c97e830f2ed3, type: 2}
     - {fileID: 2100000, guid: acb7e60239e576d4b931c97e830f2ed3, type: 2}
     - {fileID: 2100000, guid: acb7e60239e576d4b931c97e830f2ed3, type: 2}
-    - {fileID: 2100000, guid: eff8d95f3629fea4b836b8a3e5b6b52a, type: 2}
-    - {fileID: 2100000, guid: eff8d95f3629fea4b836b8a3e5b6b52a, type: 2}
+    - {fileID: 0}
+    - {fileID: 0}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -2506,101 +2301,6 @@ AnimationClip:
     path: HeadKyrehinMain/HeadBoth/Head_R(Clone)
     classID: 4
     script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: Acts/RedGroup
-    classID: 114
-    script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: Acts/EmptyGroup
-    classID: 114
-    script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: Acts/WhiteBlock
-    classID: 114
-    script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: Acts/WarmGroup
-    classID: 114
-    script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: Acts/MixGroupOne
-    classID: 114
-    script: {fileID: 11500000, guid: 45115577ef41a5b4ca741ed302693907, type: 3}
   - curve:
       serializedVersion: 2
       m_Curve:
