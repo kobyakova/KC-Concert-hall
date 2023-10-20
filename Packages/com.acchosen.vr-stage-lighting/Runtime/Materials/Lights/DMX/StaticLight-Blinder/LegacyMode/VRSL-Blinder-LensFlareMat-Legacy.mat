@@ -119,7 +119,7 @@ Material:
     - _StrobeFreq: 1
     - _UVScale: 1
     - _UVSec: 0
-    - _UniversalIntensity: 1
+    - _UniversalIntensity: 0.5
     - _UseDepthLight: 1
     - _UsePreMultiplyAlpha: 0
     - _UseRawGrid: 1

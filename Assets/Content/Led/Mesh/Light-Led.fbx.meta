@@ -32,7 +32,8 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    extraUserProperties: []
+    extraUserProperties:
+    - '#BAKERY{"meshName":["Led-bar","Led-bar-2","Led-bar-1","Led-System"],"padding":[139,256,256,256],"unwrapper":[0,0,0,0]}'
     clipAnimations: []
     isReadable: 0
   meshes:

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
   m_Name: ActivateInvertor
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: fd4f01213c835e44d9de0d0b27d7c898,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 96d343d03dbe13c4788bfa76c00c8e5a,
     type: 2}
   udonAssembly: ".data_start\r\n\r\n    .export Target\r\n    \r\n    __instance_0:
     %UnityEngineGameObject, this\r\n    __value_0: %SystemBoolean, null\r\n    __Boolean_0:
