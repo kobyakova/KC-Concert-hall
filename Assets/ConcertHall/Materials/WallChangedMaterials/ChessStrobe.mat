@@ -89,10 +89,11 @@ Material:
     - _SrcBlend: 1
     - _TImeScale: 0.005
     - _TimeScale: 0.005
-    - _TimeScle: 0.003
+    - _TimeScle: 0.5
     - _UVSec: 0
     - _ZWrite: 1
     - __dirty: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Color0: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 1.2076784, g: 2.1424887, b: 2.324685, a: 2.324685}

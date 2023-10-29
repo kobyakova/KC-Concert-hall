@@ -2,8 +2,7 @@ fileFormatVersion: 2
 guid: c1bab839acd5dce44ad04f483a802532
 ShaderImporter:
   externalObjects: {}
-  defaultTextures:
-  - _PanelEmi6: {fileID: 2800000, guid: dc30695a376754046b323647f182f140, type: 3}
+  defaultTextures: []
   nonModifiableTextures: []
   userData: 
   assetBundleName: 
