@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c333ccfdd0cbdbc4ca30cef2dd6e6b9b, type: 3}
   m_Name: QuickPlay
   m_EditorClassIdentifier: 
-  serializedUdonProgramAsset: {fileID: 11400000, guid: 2daa55a4eb42372439561d17e41d95e2,
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 15eaf6aa2b41dc74c82fd8a97c11b261,
     type: 2}
   udonAssembly: 
   assemblyError: 
