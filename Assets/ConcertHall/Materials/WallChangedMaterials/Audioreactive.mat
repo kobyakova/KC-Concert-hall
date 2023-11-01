@@ -1,0 +1,208 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Audioreactive
+  m_Shader: {fileID: 4800000, guid: 75b202cd6c96bf144b1ad251052c51e7, type: 3}
+  m_ShaderKeywords: _EMISSION _ENABLEAUDIOLINK_ON
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: c6adf519cfeab4949a83fd1b5a4691d4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MarginTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OverlayTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SamplingTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 2800000, guid: f310c3dbad3125d4e8fc2e00bdc2acb4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AltXRotation: 0
+    - _AltYRotation: 0
+    - _AltZRotation: 0
+    - _AspectRatio: 1.777777
+    - _AudioHueShift: 0
+    - _AutocorrIntensity: 0.1
+    - _AutocorrNormalization: 1
+    - _AutocorrRound: 1
+    - _AutogainDerate: 0.1
+    - _Band: 2
+    - _BandDelayPulse: 0.1
+    - _BandDelayPulseOpacity: 0.5
+    - _BandMultiplier: 1
+    - _Bass: 1
+    - _BlackOut: 1
+    - _Brightness: 2
+    - _BubbleOffset: 0.5
+    - _BubbleRotationMultiply: 1
+    - _BubbleRotationOffset: -1
+    - _BubbleRotationSpeed: 0
+    - _BumpScale: 1
+    - _ColorChord: 1
+    - _ColorChordRange: 350
+    - _Cutoff: 0.5
+    - _Delay: 0
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _Emission: 5
+    - _EnableAudioLink: 1
+    - _EnableAutogain: 1
+    - _EnableColorChord: 0
+    - _EnableColorTextureSample: 0
+    - _EnableThemeColorSampling: 0
+    - _EndFade: 3
+    - _FadeExpFalloff: 0.3
+    - _FadeLength: 0.8
+    - _FadeStrength: 0
+    - _Fadeyness: 1
+    - _FilterAmount: 1
+    - _FilterLevel: 1
+    - _FinalIntensity: 1
+    - _Gain: 0.96
+    - _GlobalIntensity: 1
+    - _GlobalIntensityBlend: 1
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _HighlightOpacity: 0.3
+    - _HighlightThickness: 0.1
+    - _History: 85.9
+    - _InternalShine: 1
+    - _InternalShineLength: 12.1
+    - _LaserCount: 1
+    - _LaserSoftening: 5
+    - _LaserThickness: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _Multiplier: 1
+    - _OcclusionStrength: 1
+    - _OverlayOpacity: 0.2
+    - _Parallax: 0.02
+    - _Pulse: 0
+    - _PulseRotation: 0
+    - _RenderTextureMultiplier: 1
+    - _Scroll: 1
+    - _SegmentThickness: 0.01
+    - _SmoothHistory: 1
+    - _Smoothness: 0
+    - _SmoothnessTextureChannel: 0
+    - _SourceDistance: 1
+    - _SourceSpatialBlend: 0
+    - _SourceVolume: 1
+    - _SpectrumGain: 1
+    - _SpectrumThickness: 0.01
+    - _SpectrumVertOffset: 0
+    - _SpecularHighlights: 1
+    - _Speed: 0
+    - _SrcBlend: 1
+    - _TextureColorSampleX: 0.89
+    - _TextureColorSampleY: 0.5
+    - _ThemeColorMode: 0
+    - _ThemeColorTarget: 0
+    - _Threshold0: 0.45
+    - _Threshold1: 0.45
+    - _Threshold2: 0.45
+    - _Threshold3: 0.45
+    - _ThresholdDottedLine: 0.001
+    - _ThresholdThickness: 0.01
+    - _Treble: 1
+    - _UVSec: 0
+    - _UniversalIntensity: 1
+    - _VertexConeLength: 0
+    - _VertexConeWidth: 0
+    - _WaveformHeight: 0.328
+    - _WaveformLineSmoothing: 0.01
+    - _WaveformThickness: 1
+    - _X0: 0.25
+    - _X1: 0.25
+    - _X2: 0.5
+    - _X3: 0.75
+    - _XOffset: 0
+    - _XRotation: 0
+    - _YOffset: 0
+    - _YRotation: 0
+    - _ZConeFlatness: 0
+    - _ZConeFlatnessAlt: 0
+    - _ZRotation: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Band0Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Band1Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Band2Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Band3Color: {r: 1, g: 1, b: 1, a: 0}
+    - _BaseColor: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _ColorBackground: {r: 0, g: 0, b: 0, a: 1}
+    - _ColorForeground: {r: 1, g: 1, b: 1, a: 1}
+    - _CustomThemeColor0: {r: 1, g: 1, b: 0, a: 1}
+    - _CustomThemeColor1: {r: 0, g: 0, b: 1, a: 1}
+    - _CustomThemeColor2: {r: 1, g: 0, b: 0, a: 1}
+    - _CustomThemeColor3: {r: 0, g: 1, b: 0, a: 1}
+    - _Emission: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HighlightPosition: {r: 0, g: 0, b: 0, a: 0}
+    - _IntensityColor: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 0}
+    - _MarkerColor: {r: 0, g: 0, b: 0, a: 0}
+    - _SeparatorColor: {r: 0.5, g: 0.5, b: 0, a: 1}
+    - _SourcePosition: {r: 0, g: 0, b: 0, a: 0}
+    - _SpectrumFixedColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    - _UnderSpectrumColor: {r: 1, g: 1, b: 1, a: 0.1}
