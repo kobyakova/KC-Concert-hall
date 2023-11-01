@@ -198,7 +198,7 @@ Material:
     - _CustomThemeColor2: {r: 1, g: 0, b: 0, a: 1}
     - _CustomThemeColor3: {r: 0, g: 1, b: 0, a: 1}
     - _Emission: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1.2076784, g: 2.1424887, b: 2.324685, a: 2.324685}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _HighlightPosition: {r: 0, g: 0, b: 0, a: 0}
     - _IntensityColor: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 0}
     - _MarkerColor: {r: 0, g: 0, b: 0, a: 0}
