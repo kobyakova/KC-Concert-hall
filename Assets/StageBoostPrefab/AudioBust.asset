@@ -18,31 +18,53 @@ MonoBehaviour:
     .export SliderNear\r\n    .export SliderGain\r\n    .export SliderGainOS\r\n   
     .export SliderNearOS\r\n    .export Enter_Far\r\n    .export Enter_Near\r\n   
     .export Enter_Gain\r\n    .export exit_Far\r\n    .export exit_Near\r\n    .export
-    exit_Gain\r\n    .export AudioBoostZone\r\n    \r\n    __instance_0: %VRCSDKBaseVRCPlayerApi,
-    null\r\n    __far_0: %SystemSingle, null\r\n    onPlayerTriggerExitPlayer: %VRCSDKBaseVRCPlayerApi,
+    exit_Gain\r\n    .export Enter\r\n    .export Exit\r\n    .export InStage\r\n   
+    \r\n    __object_0: %SystemObject, null\r\n    onPlayerTriggerExitPlayer: %VRCSDKBaseVRCPlayerApi,
+    null\r\n    __result_0: %SystemBoolean, null\r\n    __Boolean_0: %SystemBoolean,
+    null\r\n    __instance_0: %VRCSDKBaseVRCPlayerApi, null\r\n    __far_0: %SystemSingle,
     null\r\n    __instance_1: %UnityEngineUISlider, null\r\n    __instance_2: %VRCSDKBaseVRCPlayerApi,
     null\r\n    __near_0: %SystemSingle, null\r\n    __instance_3: %UnityEngineUISlider,
     null\r\n    __instance_4: %VRCSDKBaseVRCPlayerApi, null\r\n    __gain_0: %SystemSingle,
-    null\r\n    __instance_5: %UnityEngineUISlider, null\r\n    __instance_6: %VRCSDKBaseVRCPlayerApi,
-    null\r\n    __far_1: %SystemSingle, null\r\n    onPlayerTriggerEnterPlayer: %VRCSDKBaseVRCPlayerApi,
-    null\r\n    __instance_7: %UnityEngineUISlider, null\r\n    __instance_8: %VRCSDKBaseVRCPlayerApi,
-    null\r\n    __near_1: %SystemSingle, null\r\n    __instance_9: %UnityEngineUISlider,
-    null\r\n    __instance_A: %VRCSDKBaseVRCPlayerApi, null\r\n    __gain_1: %SystemSingle,
-    null\r\n    __instance_B: %UnityEngineUISlider, null\r\n    __instance_C: %UnityEngineUISlider,
-    null\r\n    __value_0: %SystemSingle, null\r\n    __instance_D: %UnityEngineUISlider,
-    null\r\n    __value_1: %SystemSingle, null\r\n    __instance_E: %UnityEngineUISlider,
-    null\r\n    __value_2: %SystemSingle, null\r\n    __instance_F: %UnityEngineUISlider,
-    null\r\n    __value_3: %SystemSingle, null\r\n    __instance_10: %UnityEngineUISlider,
-    null\r\n    __value_4: %SystemSingle, null\r\n    __instance_11: %UnityEngineUISlider,
-    null\r\n    __value_5: %SystemSingle, null\r\n    SliderFarOS: %UnityEngineUISlider,
+    null\r\n    __instance_5: %UnityEngineUISlider, null\r\n    __message_0: %SystemObject,
+    null\r\n    __object_1: %SystemObject, null\r\n    __result_1: %SystemBoolean,
+    null\r\n    __Boolean_1: %SystemBoolean, null\r\n    __instance_6: %VRCSDKBaseVRCPlayerApi,
+    null\r\n    __far_1: %SystemSingle, null\r\n    __instance_7: %UnityEngineUISlider,
+    null\r\n    __instance_8: %VRCSDKBaseVRCPlayerApi, null\r\n    __near_1: %SystemSingle,
+    null\r\n    __instance_9: %UnityEngineUISlider, null\r\n    __instance_A: %VRCSDKBaseVRCPlayerApi,
+    null\r\n    __gain_1: %SystemSingle, null\r\n    __instance_B: %UnityEngineUISlider,
+    null\r\n    __message_1: %SystemObject, null\r\n    __object_2: %SystemObject,
+    null\r\n    onPlayerTriggerEnterPlayer: %VRCSDKBaseVRCPlayerApi, null\r\n   
+    __result_2: %SystemBoolean, null\r\n    __Boolean_2: %SystemBoolean, null\r\n   
+    __instance_C: %VRCSDKBaseVRCPlayerApi, null\r\n    __far_2: %SystemSingle, null\r\n   
+    __instance_D: %UnityEngineUISlider, null\r\n    __instance_E: %VRCSDKBaseVRCPlayerApi,
+    null\r\n    __near_2: %SystemSingle, null\r\n    __instance_F: %UnityEngineUISlider,
+    null\r\n    __instance_10: %VRCSDKBaseVRCPlayerApi, null\r\n    __gain_2: %SystemSingle,
+    null\r\n    __instance_11: %UnityEngineUISlider, null\r\n    __message_2: %SystemObject,
+    null\r\n    __instance_12: %UnityEngineUISlider, null\r\n    __value_0: %SystemSingle,
+    null\r\n    __instance_13: %UnityEngineUISlider, null\r\n    __value_1: %SystemSingle,
+    null\r\n    __instance_14: %UnityEngineUISlider, null\r\n    __value_2: %SystemSingle,
+    null\r\n    __instance_15: %UnityEngineUISlider, null\r\n    __value_3: %SystemSingle,
+    null\r\n    __instance_16: %UnityEngineUISlider, null\r\n    __value_4: %SystemSingle,
+    null\r\n    __instance_17: %UnityEngineUISlider, null\r\n    __value_5: %SystemSingle,
+    null\r\n    __object_3: %SystemObject, null\r\n    __result_3: %SystemBoolean,
+    null\r\n    __Boolean_3: %SystemBoolean, null\r\n    __instance_18: %VRCSDKBaseVRCPlayerApi,
+    null\r\n    __far_3: %SystemSingle, null\r\n    __instance_19: %UnityEngineUISlider,
+    null\r\n    __instance_1A: %VRCSDKBaseVRCPlayerApi, null\r\n    __near_3: %SystemSingle,
+    null\r\n    __instance_1B: %UnityEngineUISlider, null\r\n    __instance_1C: %VRCSDKBaseVRCPlayerApi,
+    null\r\n    __gain_3: %SystemSingle, null\r\n    __instance_1D: %UnityEngineUISlider,
+    null\r\n    __message_3: %SystemObject, null\r\n    SliderFarOS: %UnityEngineUISlider,
     null\r\n    SliderFar: %UnityEngineUISlider, null\r\n    SliderNear: %UnityEngineUISlider,
     null\r\n    SliderGain: %UnityEngineUISlider, null\r\n    SliderGainOS: %UnityEngineUISlider,
     null\r\n    SliderNearOS: %UnityEngineUISlider, null\r\n    Enter_Far: %SystemSingle,
     null\r\n    Enter_Near: %SystemSingle, null\r\n    Enter_Gain: %SystemSingle,
     null\r\n    exit_Far: %SystemSingle, null\r\n    exit_Near: %SystemSingle, null\r\n   
-    exit_Gain: %SystemSingle, null\r\n    AudioBoostZone: %UnityEngineBoxCollider,
-    null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n    .export _onPlayerTriggerExit\r\n   
-    \r\n    _onPlayerTriggerExit:\r\n    \r\n        PUSH, onPlayerTriggerExitPlayer\r\n       
+    exit_Gain: %SystemSingle, null\r\n    Enter: %SystemString, null\r\n    Exit:
+    %SystemString, null\r\n    InStage: %SystemBoolean, null\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n   
+    .export OffSSliIderChange\r\n    \r\n    OffSSliIderChange:\r\n    \r\n       
+    PUSH, onPlayerTriggerExitPlayer\r\n        PUSH, __object_0\r\n        COPY\r\n       
+    PUSH, __object_0\r\n        PUSH, __result_0\r\n        EXTERN, \"VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean\"\r\n       
+    PUSH, __result_0\r\n        JUMP_IF_FALSE, 0x00000188\r\n        PUSH, InStage\r\n       
+    JUMP_IF_FALSE, 0x00000054\r\n        JUMP, 0x00000180\r\n        PUSH, onPlayerTriggerExitPlayer\r\n       
     PUSH, __instance_0\r\n        COPY\r\n        PUSH, SliderFar\r\n        PUSH,
     __instance_1\r\n        COPY\r\n        PUSH, __instance_1\r\n        PUSH, __far_0\r\n       
     EXTERN, \"UnityEngineUISlider.__get_value__SystemSingle\"\r\n        PUSH, __instance_0\r\n       
@@ -55,35 +77,84 @@ MonoBehaviour:
     PUSH, SliderGain\r\n        PUSH, __instance_5\r\n        COPY\r\n        PUSH,
     __instance_5\r\n        PUSH, __gain_0\r\n        EXTERN, \"UnityEngineUISlider.__get_value__SystemSingle\"\r\n       
     PUSH, __instance_4\r\n        PUSH, __gain_0\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetVoiceGain__SystemSingle__SystemVoid\"\r\n       
-    JUMP, 0xFFFFFFFC\r\n    \r\n    .export _onPlayerTriggerEnter\r\n    \r\n   
-    _onPlayerTriggerEnter:\r\n    \r\n        PUSH, onPlayerTriggerEnterPlayer\r\n       
-    PUSH, __instance_6\r\n        COPY\r\n        PUSH, SliderFarOS\r\n        PUSH,
+    PUSH, Exit\r\n        PUSH, __message_0\r\n        COPY\r\n        PUSH, __message_0\r\n       
+    EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n        JUMP,
+    0x00000188\r\n        JUMP, 0xFFFFFFFC\r\n    \r\n    .export _onPlayerTriggerExit\r\n   
+    \r\n    _onPlayerTriggerExit:\r\n    \r\n        PUSH, onPlayerTriggerExitPlayer\r\n       
+    PUSH, __object_1\r\n        COPY\r\n        PUSH, __object_1\r\n        PUSH,
+    __result_1\r\n        EXTERN, \"VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean\"\r\n       
+    PUSH, __result_1\r\n        JUMP_IF_FALSE, 0x00000314\r\n        PUSH, __Boolean_1\r\n       
+    PUSH, InStage\r\n        COPY\r\n        PUSH, onPlayerTriggerExitPlayer\r\n       
+    PUSH, __instance_6\r\n        COPY\r\n        PUSH, SliderFar\r\n        PUSH,
     __instance_7\r\n        COPY\r\n        PUSH, __instance_7\r\n        PUSH, __far_1\r\n       
     EXTERN, \"UnityEngineUISlider.__get_value__SystemSingle\"\r\n        PUSH, __instance_6\r\n       
     PUSH, __far_1\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetVoiceDistanceFar__SystemSingle__SystemVoid\"\r\n       
-    PUSH, onPlayerTriggerEnterPlayer\r\n        PUSH, __instance_8\r\n        COPY\r\n       
-    PUSH, SliderNearOS\r\n        PUSH, __instance_9\r\n        COPY\r\n        PUSH,
+    PUSH, onPlayerTriggerExitPlayer\r\n        PUSH, __instance_8\r\n        COPY\r\n       
+    PUSH, SliderNear\r\n        PUSH, __instance_9\r\n        COPY\r\n        PUSH,
     __instance_9\r\n        PUSH, __near_1\r\n        EXTERN, \"UnityEngineUISlider.__get_value__SystemSingle\"\r\n       
     PUSH, __instance_8\r\n        PUSH, __near_1\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetVoiceDistanceNear__SystemSingle__SystemVoid\"\r\n       
-    PUSH, onPlayerTriggerEnterPlayer\r\n        PUSH, __instance_A\r\n        COPY\r\n       
-    PUSH, SliderGainOS\r\n        PUSH, __instance_B\r\n        COPY\r\n        PUSH,
+    PUSH, onPlayerTriggerExitPlayer\r\n        PUSH, __instance_A\r\n        COPY\r\n       
+    PUSH, SliderGain\r\n        PUSH, __instance_B\r\n        COPY\r\n        PUSH,
     __instance_B\r\n        PUSH, __gain_1\r\n        EXTERN, \"UnityEngineUISlider.__get_value__SystemSingle\"\r\n       
     PUSH, __instance_A\r\n        PUSH, __gain_1\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetVoiceGain__SystemSingle__SystemVoid\"\r\n       
-    JUMP, 0xFFFFFFFC\r\n    \r\n    .export OSSliderReset\r\n    \r\n    OSSliderReset:\r\n   
-    \r\n        PUSH, SliderFarOS\r\n        PUSH, __instance_C\r\n        COPY\r\n       
-    PUSH, __instance_C\r\n        PUSH, Enter_Far\r\n        EXTERN, \"UnityEngineUISlider.__set_value__SystemSingle__SystemVoid\"\r\n       
-    PUSH, SliderNearOS\r\n        PUSH, __instance_D\r\n        COPY\r\n        PUSH,
-    __instance_D\r\n        PUSH, Enter_Near\r\n        EXTERN, \"UnityEngineUISlider.__set_value__SystemSingle__SystemVoid\"\r\n       
-    PUSH, SliderGainOS\r\n        PUSH, __instance_E\r\n        COPY\r\n        PUSH,
-    __instance_E\r\n        PUSH, Enter_Gain\r\n        EXTERN, \"UnityEngineUISlider.__set_value__SystemSingle__SystemVoid\"\r\n       
+    PUSH, Exit\r\n        PUSH, __message_1\r\n        COPY\r\n        PUSH, __message_1\r\n       
+    EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n        JUMP,
+    0x00000314\r\n        JUMP, 0xFFFFFFFC\r\n    \r\n    .export _onPlayerTriggerEnter\r\n   
+    \r\n    _onPlayerTriggerEnter:\r\n    \r\n        PUSH, onPlayerTriggerEnterPlayer\r\n       
+    PUSH, __object_2\r\n        COPY\r\n        PUSH, __object_2\r\n        PUSH,
+    __result_2\r\n        EXTERN, \"VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean\"\r\n       
+    PUSH, __result_2\r\n        JUMP_IF_FALSE, 0x000004A0\r\n        PUSH, __Boolean_2\r\n       
+    PUSH, InStage\r\n        COPY\r\n        PUSH, onPlayerTriggerEnterPlayer\r\n       
+    PUSH, __instance_C\r\n        COPY\r\n        PUSH, SliderFarOS\r\n        PUSH,
+    __instance_D\r\n        COPY\r\n        PUSH, __instance_D\r\n        PUSH, __far_2\r\n       
+    EXTERN, \"UnityEngineUISlider.__get_value__SystemSingle\"\r\n        PUSH, __instance_C\r\n       
+    PUSH, __far_2\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetVoiceDistanceFar__SystemSingle__SystemVoid\"\r\n       
+    PUSH, onPlayerTriggerEnterPlayer\r\n        PUSH, __instance_E\r\n        COPY\r\n       
+    PUSH, SliderNearOS\r\n        PUSH, __instance_F\r\n        COPY\r\n        PUSH,
+    __instance_F\r\n        PUSH, __near_2\r\n        EXTERN, \"UnityEngineUISlider.__get_value__SystemSingle\"\r\n       
+    PUSH, __instance_E\r\n        PUSH, __near_2\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetVoiceDistanceNear__SystemSingle__SystemVoid\"\r\n       
+    PUSH, onPlayerTriggerEnterPlayer\r\n        PUSH, __instance_10\r\n        COPY\r\n       
+    PUSH, SliderGainOS\r\n        PUSH, __instance_11\r\n        COPY\r\n       
+    PUSH, __instance_11\r\n        PUSH, __gain_2\r\n        EXTERN, \"UnityEngineUISlider.__get_value__SystemSingle\"\r\n       
+    PUSH, __instance_10\r\n        PUSH, __gain_2\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetVoiceGain__SystemSingle__SystemVoid\"\r\n       
+    PUSH, Enter\r\n        PUSH, __message_2\r\n        COPY\r\n        PUSH, __message_2\r\n       
+    EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n        JUMP,
+    0x000004A0\r\n        JUMP, 0xFFFFFFFC\r\n    \r\n    .export OSSliderReset\r\n   
+    \r\n    OSSliderReset:\r\n    \r\n        PUSH, SliderFarOS\r\n        PUSH,
+    __instance_12\r\n        COPY\r\n        PUSH, __instance_12\r\n        PUSH,
+    Enter_Far\r\n        EXTERN, \"UnityEngineUISlider.__set_value__SystemSingle__SystemVoid\"\r\n       
+    PUSH, SliderNearOS\r\n        PUSH, __instance_13\r\n        COPY\r\n       
+    PUSH, __instance_13\r\n        PUSH, Enter_Near\r\n        EXTERN, \"UnityEngineUISlider.__set_value__SystemSingle__SystemVoid\"\r\n       
+    PUSH, SliderGainOS\r\n        PUSH, __instance_14\r\n        COPY\r\n       
+    PUSH, __instance_14\r\n        PUSH, Enter_Gain\r\n        EXTERN, \"UnityEngineUISlider.__set_value__SystemSingle__SystemVoid\"\r\n       
     JUMP, 0xFFFFFFFC\r\n    \r\n    .export SliderReset\r\n    \r\n    SliderReset:\r\n   
-    \r\n        PUSH, SliderFar\r\n        PUSH, __instance_F\r\n        COPY\r\n       
-    PUSH, __instance_F\r\n        PUSH, exit_Far\r\n        EXTERN, \"UnityEngineUISlider.__set_value__SystemSingle__SystemVoid\"\r\n       
-    PUSH, SliderNear\r\n        PUSH, __instance_10\r\n        COPY\r\n        PUSH,
-    __instance_10\r\n        PUSH, exit_Near\r\n        EXTERN, \"UnityEngineUISlider.__set_value__SystemSingle__SystemVoid\"\r\n       
-    PUSH, SliderGain\r\n        PUSH, __instance_11\r\n        COPY\r\n        PUSH,
-    __instance_11\r\n        PUSH, exit_Gain\r\n        EXTERN, \"UnityEngineUISlider.__set_value__SystemSingle__SystemVoid\"\r\n       
-    JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
+    \r\n        PUSH, SliderFar\r\n        PUSH, __instance_15\r\n        COPY\r\n       
+    PUSH, __instance_15\r\n        PUSH, exit_Far\r\n        EXTERN, \"UnityEngineUISlider.__set_value__SystemSingle__SystemVoid\"\r\n       
+    PUSH, SliderNear\r\n        PUSH, __instance_16\r\n        COPY\r\n        PUSH,
+    __instance_16\r\n        PUSH, exit_Near\r\n        EXTERN, \"UnityEngineUISlider.__set_value__SystemSingle__SystemVoid\"\r\n       
+    PUSH, SliderGain\r\n        PUSH, __instance_17\r\n        COPY\r\n        PUSH,
+    __instance_17\r\n        PUSH, exit_Gain\r\n        EXTERN, \"UnityEngineUISlider.__set_value__SystemSingle__SystemVoid\"\r\n       
+    JUMP, 0xFFFFFFFC\r\n    \r\n    .export OnSSliIderChange\r\n    \r\n    OnSSliIderChange:\r\n   
+    \r\n        PUSH, onPlayerTriggerEnterPlayer\r\n        PUSH, __object_3\r\n       
+    COPY\r\n        PUSH, __object_3\r\n        PUSH, __result_3\r\n        EXTERN,
+    \"VRCSDKBaseUtilities.__IsValid__SystemObject__SystemBoolean\"\r\n        PUSH,
+    __result_3\r\n        JUMP_IF_FALSE, 0x00000748\r\n        PUSH, InStage\r\n       
+    JUMP_IF_FALSE, 0x00000740\r\n        PUSH, onPlayerTriggerEnterPlayer\r\n       
+    PUSH, __instance_18\r\n        COPY\r\n        PUSH, SliderFarOS\r\n        PUSH,
+    __instance_19\r\n        COPY\r\n        PUSH, __instance_19\r\n        PUSH,
+    __far_3\r\n        EXTERN, \"UnityEngineUISlider.__get_value__SystemSingle\"\r\n       
+    PUSH, __instance_18\r\n        PUSH, __far_3\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetVoiceDistanceFar__SystemSingle__SystemVoid\"\r\n       
+    PUSH, onPlayerTriggerEnterPlayer\r\n        PUSH, __instance_1A\r\n        COPY\r\n       
+    PUSH, SliderNearOS\r\n        PUSH, __instance_1B\r\n        COPY\r\n       
+    PUSH, __instance_1B\r\n        PUSH, __near_3\r\n        EXTERN, \"UnityEngineUISlider.__get_value__SystemSingle\"\r\n       
+    PUSH, __instance_1A\r\n        PUSH, __near_3\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetVoiceDistanceNear__SystemSingle__SystemVoid\"\r\n       
+    PUSH, onPlayerTriggerEnterPlayer\r\n        PUSH, __instance_1C\r\n        COPY\r\n       
+    PUSH, SliderGainOS\r\n        PUSH, __instance_1D\r\n        COPY\r\n       
+    PUSH, __instance_1D\r\n        PUSH, __gain_3\r\n        EXTERN, \"UnityEngineUISlider.__get_value__SystemSingle\"\r\n       
+    PUSH, __instance_1C\r\n        PUSH, __gain_3\r\n        EXTERN, \"VRCSDKBaseVRCPlayerApi.__SetVoiceGain__SystemSingle__SystemVoid\"\r\n       
+    PUSH, Enter\r\n        PUSH, __message_3\r\n        COPY\r\n        PUSH, __message_3\r\n       
+    EXTERN, \"UnityEngineDebug.__Log__SystemObject__SystemVoid\"\r\n        JUMP,
+    0x00000740\r\n        JUMP, 0x00000748\r\n        JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
   assemblyError: 
   graphData:
     name: 
@@ -468,6 +539,7 @@ MonoBehaviour:
       - af5c8f16-3d18-4b48-b9d2-b07c8df84d90
       - b6d94649-32d1-4fee-b69e-2541b62010f0
       - 208a6aa5-c2ce-4b5d-82ba-9d7ab8def77f
+      - 005a8c9b-6c5a-41ef-a2b8-653527f8ebd1
       nodeValues: []
     - fullName: Get_Variable
       uid: bbe62768-6ddd-4ca0-bb2a-fb615c1d56d8
@@ -571,31 +643,31 @@ MonoBehaviour:
         stringValue: 
     - fullName: Event_Custom
       uid: c2ef6f4f-079f-4d3d-857d-4236d8a40d36
-      position: {x: -170.9767, y: -53.716537}
+      position: {x: -622.55, y: -155.00005}
       nodeUIDs:
       - 
       flowUIDs:
-      - 
+      - 05091ce9-86d4-427c-b08d-8a923f179561
       nodeValues:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|OffSSliIderChange
     - fullName: Event_OnPlayerTriggerExit
       uid: d4a05a87-00a2-4318-a463-399b2a114ffe
-      position: {x: -76.887505, y: -439.3173}
+      position: {x: -497.19, y: -465.935}
       nodeUIDs: []
       flowUIDs:
-      - 471422b5-fce8-4e83-b58c-82a165f68a98
+      - a9b70d8e-112f-4687-8562-44820f15b94d
       nodeValues: []
     - fullName: Event_OnPlayerTriggerEnter
       uid: 7b48c630-09ff-4465-a106-b78cd18db330
-      position: {x: -203.07545, y: -1025.7968}
+      position: {x: -341.78363, y: -1064.2158}
       nodeUIDs: []
       flowUIDs:
-      - 3ab3ba67-7179-46cf-a509-cb3372a6be68
+      - e9e2f8da-630b-48b1-a9c7-b0038b94939b
       nodeValues: []
     - fullName: Event_Custom
       uid: b904fe1d-eb1e-4c1a-85a0-a402f4ba28e0
-      position: {x: -690.14325, y: 589.02}
+      position: {x: -1265, y: 898.99994}
       nodeUIDs:
       - 
       flowUIDs:
@@ -605,7 +677,7 @@ MonoBehaviour:
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|OSSliderReset
     - fullName: Get_Variable
       uid: 0bf4736c-838f-4933-960b-7cf1b1952e4b
-      position: {x: -205.14325, y: 168.0199}
+      position: {x: -780, y: 478.00003}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -616,7 +688,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: Get_Variable
       uid: a03f13dc-ab9e-484c-8420-b0bc90218f5e
-      position: {x: -198.14323, y: 295.02005}
+      position: {x: -773, y: 605}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -627,7 +699,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: Get_Variable
       uid: bc91fd45-4e6f-4e1c-bc0b-2a9bdcc7e48a
-      position: {x: -205.14325, y: 410.01993}
+      position: {x: -780, y: 720}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -638,7 +710,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: Get_Variable
       uid: f92769ab-d960-4e84-94f0-4d50736ce3bc
-      position: {x: -198.14323, y: 498.01996}
+      position: {x: -773, y: 807.9999}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -649,7 +721,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: UnityEngineUISlider.__set_value__SystemSingle__SystemVoid
       uid: 44f7b4bf-98bd-44cf-9561-8e79bc44aaba
-      position: {x: 61.856846, y: 262.02}
+      position: {x: -512.9999, y: 572}
       nodeUIDs:
       - 0bf4736c-838f-4933-960b-7cf1b1952e4b
       - a03f13dc-ab9e-484c-8420-b0bc90218f5e
@@ -661,7 +733,7 @@ MonoBehaviour:
         stringValue: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|0
     - fullName: Get_Variable
       uid: 8306f948-2211-40b4-a2b8-f31a15c31f76
-      position: {x: -225, y: 636}
+      position: {x: -800, y: 946.00006}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -672,7 +744,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: Get_Variable
       uid: 9b25c522-f901-4f5c-a709-7e525279379f
-      position: {x: -198.14323, y: 729.01996}
+      position: {x: -773, y: 1039}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -683,7 +755,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: UnityEngineUISlider.__set_value__SystemSingle__SystemVoid
       uid: 85d28a34-6d57-4cfa-817b-4bb4aa331fa0
-      position: {x: 48.8569, y: 422.01993}
+      position: {x: -526.00006, y: 732}
       nodeUIDs:
       - bc91fd45-4e6f-4e1c-bc0b-2a9bdcc7e48a
       - f92769ab-d960-4e84-94f0-4d50736ce3bc
@@ -695,7 +767,7 @@ MonoBehaviour:
         stringValue: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|0
     - fullName: UnityEngineUISlider.__set_value__SystemSingle__SystemVoid
       uid: 917a2be5-705e-47d5-9241-6f4350704aa0
-      position: {x: 36.856773, y: 621.01996}
+      position: {x: -537.9999, y: 931.00006}
       nodeUIDs:
       - 8306f948-2211-40b4-a2b8-f31a15c31f76
       - 9b25c522-f901-4f5c-a709-7e525279379f
@@ -707,7 +779,7 @@ MonoBehaviour:
         stringValue: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|0
     - fullName: UnityEngineUISlider.__set_value__SystemSingle__SystemVoid
       uid: ef17739a-12d8-4762-9dfa-f319a158bde4
-      position: {x: 54.856678, y: 974.02}
+      position: {x: -520, y: 1284}
       nodeUIDs:
       - ae4f6d92-8d10-4b87-a852-b2bcd233cccf
       - f83097f5-0352-4393-ba71-477f88b01639
@@ -719,7 +791,7 @@ MonoBehaviour:
         stringValue: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|0
     - fullName: UnityEngineUISlider.__set_value__SystemSingle__SystemVoid
       uid: 2af1b497-4cf7-4c07-8164-8da0e541a630
-      position: {x: 41.85673, y: 1134.0201}
+      position: {x: -532.9999, y: 1444}
       nodeUIDs:
       - e9ed2bb1-ac61-492c-8abd-15193d146221
       - 68d3779e-43c2-48dc-9c66-cb8e7a81223a
@@ -731,7 +803,7 @@ MonoBehaviour:
         stringValue: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|0
     - fullName: UnityEngineUISlider.__set_value__SystemSingle__SystemVoid
       uid: 75c2def6-4a99-4319-bbb9-3d9f37445d67
-      position: {x: 29.85689, y: 1333.02}
+      position: {x: -545, y: 1642.9999}
       nodeUIDs:
       - e267b395-83c3-4822-a36f-0c3fd68a1135
       - bf2a16f4-fd67-48be-b476-d0c486be30b3
@@ -743,7 +815,7 @@ MonoBehaviour:
         stringValue: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|0
     - fullName: Get_Variable
       uid: f83097f5-0352-4393-ba71-477f88b01639
-      position: {x: -202.14322, y: 1003.01996}
+      position: {x: -777, y: 1312.9999}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -754,7 +826,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: Get_Variable
       uid: 68d3779e-43c2-48dc-9c66-cb8e7a81223a
-      position: {x: -205.14325, y: 1225.02}
+      position: {x: -780, y: 1535}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -765,7 +837,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: Get_Variable
       uid: bf2a16f4-fd67-48be-b476-d0c486be30b3
-      position: {x: -215.14317, y: 1444.0198}
+      position: {x: -790, y: 1754}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -776,7 +848,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: Event_Custom
       uid: 4b774c0d-111c-4a02-b67b-daf41c7a4fe7
-      position: {x: -796.1501, y: 1172.9}
+      position: {x: -1371, y: 1482.9999}
       nodeUIDs:
       - 
       flowUIDs:
@@ -786,7 +858,7 @@ MonoBehaviour:
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|SliderReset
     - fullName: Get_Variable
       uid: ae4f6d92-8d10-4b87-a852-b2bcd233cccf
-      position: {x: -200.1433, y: 893.02}
+      position: {x: -775, y: 1202.9999}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -797,7 +869,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: Get_Variable
       uid: e9ed2bb1-ac61-492c-8abd-15193d146221
-      position: {x: -212.14328, y: 1133.02}
+      position: {x: -787, y: 1442.9999}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -808,7 +880,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: Get_Variable
       uid: e267b395-83c3-4822-a36f-0c3fd68a1135
-      position: {x: -233.14322, y: 1351.0199}
+      position: {x: -808, y: 1661}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -819,7 +891,7 @@ MonoBehaviour:
         stringValue: 
     - fullName: Block
       uid: c53a25c4-3f51-4927-a484-936ab7048431
-      position: {x: -509.14328, y: 1068.02}
+      position: {x: -1084, y: 1377.9999}
       nodeUIDs: []
       flowUIDs:
       - ef17739a-12d8-4762-9dfa-f319a158bde4
@@ -828,7 +900,7 @@ MonoBehaviour:
       nodeValues: []
     - fullName: Block
       uid: 785d25ed-6b5c-49d3-b13a-30bba7f1c667
-      position: {x: -399.14322, y: 538.02}
+      position: {x: -973.99994, y: 847.9999}
       nodeUIDs: []
       flowUIDs:
       - 44f7b4bf-98bd-44cf-9561-8e79bc44aaba
@@ -843,20 +915,32 @@ MonoBehaviour:
       - 07dacbbe-5652-4a46-b455-1aa3054edbb1
       - 95dbfd13-03a1-44ce-bfcb-eb847644c901
       - 0dc85ab0-3c8e-4856-b1b3-69c471a00b95
+      - c72875fa-e256-4a27-b807-28587f3d176a
       nodeValues: []
     - fullName: Event_Custom
       uid: 5eea956d-98f3-41be-9629-a0425d2384d4
-      position: {x: 30.039663, y: -1189.1471}
+      position: {x: -152.84894, y: -1460.498}
       nodeUIDs:
       - 
       flowUIDs:
-      - 
+      - 7b85efbb-7aa1-455f-b869-e35fc681edd4
       nodeValues:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|OnSSliIderChange
-    - fullName: Variable_UnityEngineBoxCollider
-      uid: 99d76975-c49d-445d-b35e-907ad5d4983d
-      position: {x: 0, y: 0}
+    - fullName: Branch
+      uid: ad03f8f9-ef81-4e65-a547-93590d438bf3
+      position: {x: 259.00797, y: -1459.4978}
+      nodeUIDs:
+      - 8952e4d1-642b-4f09-8593-1284b4f3d015|0
+      flowUIDs:
+      - 3ab3ba67-7179-46cf-a509-cb3372a6be68
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
+    - fullName: Variable_SystemString
+      uid: 65e2c2fc-2b90-4661-bf06-a33423d9b83f
+      position: {x: -961, y: 362.5}
       nodeUIDs:
       - 
       - 
@@ -868,7 +952,96 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: 
       - unityObjectValue: {fileID: 0}
-        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|AudioBoostZone
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Enter
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|True
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
+    - fullName: Variable_SystemString
+      uid: 7a38fb22-c585-4514-92cb-73e50b2fec92
+      position: {x: -505, y: 301.5}
+      nodeUIDs:
+      - 
+      - 
+      - 
+      - 
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Exit
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|True
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
+    - fullName: UnityEngineDebug.__Log__SystemObject__SystemVoid
+      uid: 005a8c9b-6c5a-41ef-a2b8-653527f8ebd1
+      position: {x: 1088.9883, y: -1392.1577}
+      nodeUIDs:
+      - aec26c6c-8c90-41c2-87db-df0752de5a05|0
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: UnityEngineDebug.__Log__SystemObject__SystemVoid
+      uid: c72875fa-e256-4a27-b807-28587f3d176a
+      position: {x: 1228.1718, y: 250.68}
+      nodeUIDs:
+      - 3c2909b4-6600-42f6-a9e5-d6bb06d06715|0
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: Get_Variable
+      uid: aec26c6c-8c90-41c2-87db-df0752de5a05
+      position: {x: 815.66034, y: -1467.7495}
+      nodeUIDs:
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|65e2c2fc-2b90-4661-bf06-a33423d9b83f
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: Get_Variable
+      uid: 3c2909b4-6600-42f6-a9e5-d6bb06d06715
+      position: {x: 833.94415, y: 462.03897}
+      nodeUIDs:
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|7a38fb22-c585-4514-92cb-73e50b2fec92
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: Variable_SystemBoolean
+      uid: 1e304e0f-01b4-49b5-9684-38b5f5f3569f
+      position: {x: -334.34747, y: 1302.7415}
+      nodeUIDs:
+      - 
+      - 
+      - 
+      - 
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|InStage
       - unityObjectValue: {fileID: 0}
         stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089|True
@@ -878,19 +1051,120 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
     - fullName: Get_Variable
-      uid: 92f2fb63-38fb-4cda-8e53-4e3f401f5f6c
-      position: {x: 57.36, y: -1441.4119}
+      uid: 8952e4d1-642b-4f09-8593-1284b4f3d015
+      position: {x: 123.78476, y: -1318.2308}
       nodeUIDs:
       - 
       flowUIDs: []
       nodeValues:
       - unityObjectValue: {fileID: 0}
-        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|99d76975-c49d-445d-b35e-907ad5d4983d
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|1e304e0f-01b4-49b5-9684-38b5f5f3569f
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: Is_Valid
+      uid: e9e2f8da-630b-48b1-a9c7-b0038b94939b
+      position: {x: 188, y: -1144}
+      nodeUIDs:
+      - 7b48c630-09ff-4465-a106-b78cd18db330|0
+      flowUIDs:
+      - 86fcfba7-c50e-4953-a498-8016dad9d621
+      - 
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: Set_Variable
+      uid: 86fcfba7-c50e-4953-a498-8016dad9d621
+      position: {x: 516.9185, y: -1225.666}
+      nodeUIDs:
+      - 
+      - 0a51595e-05aa-4271-b2fe-2332d31154a5|0
+      - 
+      flowUIDs:
+      - 3ab3ba67-7179-46cf-a509-cb3372a6be68
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|1e304e0f-01b4-49b5-9684-38b5f5f3569f
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
+    - fullName: Is_Valid
+      uid: 7b85efbb-7aa1-455f-b869-e35fc681edd4
+      position: {x: 89.60137, y: -1460.2507}
+      nodeUIDs:
+      - 7b48c630-09ff-4465-a106-b78cd18db330|0
+      flowUIDs:
+      - ad03f8f9-ef81-4e65-a547-93590d438bf3
+      - 
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: Is_Valid
+      uid: a9b70d8e-112f-4687-8562-44820f15b94d
+      position: {x: -178.96997, y: -523.9}
+      nodeUIDs:
+      - d4a05a87-00a2-4318-a463-399b2a114ffe|0
+      flowUIDs:
+      - d5b8e97a-8651-402d-a53c-8ecdb2563d3b
+      - 
+      nodeValues:
       - unityObjectValue: {fileID: 0}
         stringValue: 
     - fullName: Branch
-      uid: ad03f8f9-ef81-4e65-a547-93590d438bf3
-      position: {x: -375.2525, y: -882.0437}
+      uid: ce351a15-6c99-4da4-bb0a-bbfb27880fab
+      position: {x: -59.6899, y: -154.81114}
+      nodeUIDs:
+      - e5e176cb-97b6-4745-a8fd-28481169ecdb
+      flowUIDs:
+      - 
+      - 471422b5-fce8-4e83-b58c-82a165f68a98
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
+    - fullName: Get_Variable
+      uid: e5e176cb-97b6-4745-a8fd-28481169ecdb
+      position: {x: -213.11504, y: -0.64499635}
+      nodeUIDs:
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|1e304e0f-01b4-49b5-9684-38b5f5f3569f
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: Set_Variable
+      uid: d5b8e97a-8651-402d-a53c-8ecdb2563d3b
+      position: {x: 74.646164, y: -491.0596}
+      nodeUIDs:
+      - 
+      - 655168aa-2555-437c-8efe-e58842c076b6|0
+      - 
+      flowUIDs:
+      - 471422b5-fce8-4e83-b58c-82a165f68a98
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|1e304e0f-01b4-49b5-9684-38b5f5f3569f
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
+    - fullName: Is_Valid
+      uid: 05091ce9-86d4-427c-b08d-8a923f179561
+      position: {x: -282.64996, y: -158.45006}
+      nodeUIDs:
+      - d4a05a87-00a2-4318-a463-399b2a114ffe|0
+      flowUIDs:
+      - ce351a15-6c99-4da4-bb0a-bbfb27880fab
+      - 
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: Const_SystemBoolean
+      uid: 655168aa-2555-437c-8efe-e58842c076b6
+      position: {x: -123.04353, y: -305.26093}
       nodeUIDs:
       - 
       flowUIDs: []
@@ -898,6 +1172,16 @@ MonoBehaviour:
       - unityObjectValue: {fileID: 0}
         stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089|False
+    - fullName: Const_SystemBoolean
+      uid: 0a51595e-05aa-4271-b2fe-2332d31154a5
+      position: {x: 340.7826, y: -1046.7391}
+      nodeUIDs:
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|True
     updateOrder: 0
   graphElementData: []
   version: 1.0.0
