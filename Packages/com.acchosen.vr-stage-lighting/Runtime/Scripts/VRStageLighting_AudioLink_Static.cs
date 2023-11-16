@@ -778,6 +778,7 @@ namespace VRSL
         }
         public void _CheckConstraints(VRStageLighting_AudioLink_Static fixture)
         {
+            Debug.Log("IM hear!!");
             if(fixture.targetToFollow != null)
             {
                 if(fixture.targetConstraint == null)

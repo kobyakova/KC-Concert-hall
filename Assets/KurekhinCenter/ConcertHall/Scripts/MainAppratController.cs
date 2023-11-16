@@ -22,17 +22,18 @@ public class MainAppratController : UdonSharpBehaviour
 
     public Animator panelAnimator;
     public Dropdown panelAnims;
+    [Space(10)]
 
 
     //Projectors GROUP
     [Header("Projectors")]
-    public UnityEngine.UI.Slider projectorsHue;
-    public UnityEngine.UI.Slider projectorsSaturate;
-    public UnityEngine.UI.Slider projectorsPower;
-    public UnityEngine.UI.Toggle projectorsAudioLink;
+    public Slider projectorsHue;
+    public Slider projectorsSaturate;
+    public Slider projectorsPower;
+    public Toggle projectorsAudioLink;
     [SerializeField] 
     public VRSL.VRStageLighting_AudioLink_Static[] projectors;
-    public UnityEngine.UI.Toggle includeProjectors;
+    public Toggle includeProjectors;
 
     public GameObject[] projectorTargets;
     public Dropdown projectorTargetMode;
@@ -46,14 +47,19 @@ public class MainAppratController : UdonSharpBehaviour
     public float projRandMaxX;
     public float projRandMinX;
     public GameObject controlldProjectorTargets;
-    public UnityEngine.UI.Slider projectorCtrlX;
-    public UnityEngine.UI.Slider projectorCtrlZ;
+    public Slider projectorCtrlX;
+    public Slider projectorCtrlZ;
     public Button targetCtrlReset;
 
     public Slider projectorsConeWeight;
     public Slider projectorsBlickPower;
     public Slider projectorsBlickHarsh;
     public Material blickMateral;
+
+    public GameObject microphoneRed;
+    public GameObject microphoneGreen;
+    public GameObject microphoneBlue;
+    [Space(10)]
 
 
 
@@ -166,7 +172,14 @@ public class MainAppratController : UdonSharpBehaviour
         projectorCtrlX.gameObject.SetActive(false);
         projectorCtrlZ.gameObject.SetActive(false);
 
-        switch (projectorTargetMode.value)
+        for (int i = 0; i < projectorTargets.Length; i++)
+
+        {
+            //projectors[i].targetToFollow = projectorTargets[i].transform;
+            projectorTargets[i].transform.SetParent(projectors[i].transform);
+        }
+
+            switch (projectorTargetMode.value)
         {
             case 0: //Small Scena
                 for (int i = 0; i < projectorTargets.Length; i++)
@@ -210,7 +223,32 @@ public class MainAppratController : UdonSharpBehaviour
                 }
                 break;
 
+            case 5: //microphoneRed
 
+                for (int i = 0; i < projectorTargets.Length; i++)
+                {
+                    projectorTargets[i].transform.SetParent(microphoneRed.transform);
+                    projectorTargets[i].transform.localPosition = new Vector3(0, 0, 0);
+                } 
+                break;
+
+            case 6://microphoneGreen
+
+                for (int i = 0; i < projectorTargets.Length; i++)
+                {
+                    projectorTargets[i].transform.SetParent(microphoneGreen.transform);
+                    projectorTargets[i].transform.localPosition = new Vector3(0, 0, 0);
+                }
+                break;
+
+            case 7://microphoneBlue
+
+                for (int i = 0; i < projectorTargets.Length; i++)
+                {
+                    projectorTargets[i].transform.SetParent(microphoneBlue.transform);
+                    projectorTargets[i].transform.localPosition = new Vector3(0, 0, 0);
+                }
+                break;
             default:               
                 break;
         }

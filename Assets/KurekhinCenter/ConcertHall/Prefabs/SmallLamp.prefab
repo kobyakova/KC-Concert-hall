@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UID: 862116380
   color: {r: 1, g: 0.7529412, b: 0.496, a: 1}
-  intensity: 0.5
+  intensity: 0.2
   shadowSpread: 0.1
   cutoff: 11
   realisticFalloff: 0
