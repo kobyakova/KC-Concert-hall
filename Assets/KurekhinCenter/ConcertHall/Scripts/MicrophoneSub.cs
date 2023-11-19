@@ -11,13 +11,23 @@ public class MicrophoneSub : UdonSharpBehaviour
     public string pickupEventName;
     public string dropEventName;
     public Toggle increase;
+    public Color col;
+    //public string testVar;
 
     public override void OnPickup()
     {
-        if(increase.isOn)  mainScript.SendCustomEvent(pickupEventName);
-    }
+        if (increase.isOn)
+        {
+            
+            mainScript.SetProgramVariable("heldMicro", this.gameObject);
+            //this.GetComponent<Renderer>().material.SetColor("_EmissionColor", Color.white * 3);
+
+            mainScript.SendCustomEvent(pickupEventName);
+        }
+    } 
     public override void OnDrop() 
     {
         mainScript.SendCustomEvent(dropEventName);
+        
     }
 }

@@ -49,129 +49,314 @@ public class MainAudioController : UdonSharpBehaviour
     public Slider lowSliderFar;
     public Slider lowSliderNear;
 
+    [UdonSynced, FieldChangeCallback(nameof(amplifyID))]
+    private int _amplifyID;
+    [UdonSynced, FieldChangeCallback(nameof(noAmplifyID))]
+    private int _noAmplifyID;
+    private VRCPlayerApi amplifyPlayer;
+    private VRCPlayerApi noAmplifyPlayer;
+
     bool onStage;
     bool boosted;
-    VRCPlayerApi locPlayer;
-    public Text debugLog;
-    public Text debugLogCollider;
+    VRCPlayerApi localplayer;
+    private int localPlayerID;
+    
+    public GameObject heldMicro;
+    
+
 
     public void Start()
     {
-        locPlayer = Networking.LocalPlayer;
-        debugLog.text = locPlayer.displayName;
-        Debug.Log(locPlayer);
+        if (Utilities.IsValid(Networking.LocalPlayer))
+        {
+            localplayer = Networking.LocalPlayer;
+            localPlayerID = Networking.LocalPlayer.playerId;
+        }
 
+
+        localplayer = Networking.LocalPlayer;
+        
         IncludeMic();
     }
 
-    public override void OnPlayerTriggerEnter(VRCPlayerApi a)
+    public int amplifyID
     {
-        if (locPlayer == null) return;
-        onStage = true;
-        Debug.Log("Player enter in audio boost zone");
-        if (a.isLocal)
+        set
         {
-            locPlayer.SetVoiceDistanceFar(highSliderFar.value);
-            locPlayer.SetVoiceGain(highSliderGain.value);
-            locPlayer.SetVoiceDistanceNear(highSliderNear.value);
-            locPlayer.SetJumpImpulse(30);
+            _amplifyID = value;
+            Debug.Log("Amplify ID set to " + _amplifyID);
+            SetVoiceHigh();
 
-            boosted = true;
-            
-            Debug.Log("Player voice did increased");
-            Debug.Log(a);
-            debugLogCollider.text = a.displayName;
         }
+
+        get => _amplifyID;
+    }
+
+    public int noAmplifyID
+    {
+        set
+        {
+            _noAmplifyID = value;
+            Debug.Log("Noamplify ID set to " + _noAmplifyID);
+            SetVoiceLow();
+
+        }
+
+        get => _noAmplifyID;
+    }
+    public override void OnPlayerTriggerEnter(VRCPlayerApi localplayer)
+    {
+
+        //if (Networking.IsClogged == false && Networking.IsNetworkSettled == true) //make sure network is ready
+        {
+            if (Networking.IsOwner(gameObject) == false)
+            {
+                Networking.SetOwner(localplayer, gameObject);
+            }
+
+            if (Networking.IsOwner(gameObject) == true)
+            {
+                onStage = true;
+                Debug.Log("Player enter in audio boost zone");
+                if (localplayer.isLocal)
+                {                     
+
+                    if (localPlayerID == amplifyID) 
+                    {
+                        Debug.Log("ID already matches amplifyID, forcing sync");
+                        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "SetVoiceHigh");
+                        Debug.Log("Player voice did increased");
+                        boosted = true;
+                    }
+                    else
+                    {
+                        amplifyID = localPlayerID;
+                        Debug.Log("Setting AmplifyID to " + amplifyID);
+                        RequestSerialization();
+                    }
+                }
+
+                
+            }
+        }
+             
         
     }
 
-    public override void OnPlayerTriggerExit(VRCPlayerApi a)
+    public override void OnPlayerTriggerExit(VRCPlayerApi localplayer)
     {
-        if (locPlayer == null) return;
-        Debug.Log("Player exit in audio boost zone");
-        onStage = false;
+        //if (Networking.IsClogged == false && Networking.IsNetworkSettled == true) //make sure network is ready
+        {
+            if (Networking.IsOwner(gameObject) == false)
+            { 
+                Networking.SetOwner(localplayer, gameObject);
+            }
 
-        if (!(microphoneRed.GetComponent<VRC_Pickup>().IsHeld ||
-           microphoneGreen.GetComponent<VRC_Pickup>().IsHeld ||
-           microphoneBlue.GetComponent<VRC_Pickup>().IsHeld)){ //Если не один из микрофонов не в руках. Т.е. если хоть один микрофон удерживается, то не надо
-
-            if (a.isLocal)
+            if (Networking.IsOwner(gameObject) == true)
             {
-                locPlayer.SetVoiceDistanceFar(lowSliderFar.value);
-                locPlayer.SetVoiceGain(lowSliderGain.value);
-                locPlayer.SetVoiceDistanceNear(lowSliderNear.value);
-                locPlayer.SetJumpImpulse(3);
+                Debug.Log("Player exit in audio boost zone");
+                onStage = false;
+                /*
+                if ( !((microphoneRed.GetComponent<VRC_Pickup>().IsHeld && micRedIncrease.isOn) ||
+                       (microphoneGreen.GetComponent<VRC_Pickup>().IsHeld && micGreenIncrease.isOn) ||
+                       (microphoneBlue.GetComponent<VRC_Pickup>().IsHeld && micBlueIncrease.isOn)) )//Если не один из включённых микрофонов не в руках. Т.е. если хоть один включённый микрофон удерживается, то не надо
+                */
+                if (heldMicro.GetComponent<VRC_Pickup>().IsHeld && heldMicro.GetComponent<MicrophoneSub>().increase.isOn) 
+                {
+                    MicrophonePickUp();
+                }
+                else
+                { 
 
-                boosted = false;
-                Debug.Log("Player voice did decrease");
+                    if (localplayer.isLocal)
+                    {
+                        
+                        if (localPlayerID == noAmplifyID)
+                        {
+                            Debug.Log("ID already matches amplifyID, forcing sync");
+                            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "SetVoiceLow");
+                            Debug.Log("Player voice did decrease");
+                            boosted = false;
+                        }
+                        else
+                        {
+                            noAmplifyID = localPlayerID;
+                            Debug.Log("Setting AmplifyID to " + noAmplifyID);
+                            RequestSerialization();
+                        }
+                    }
+                }
             }
         }
+                
     }
 
     public void _OnVolumeChange()
     {
-        if (boosted)
+        //if (Networking.IsClogged == false && Networking.IsNetworkSettled == true) //make sure network is ready
         {
-            locPlayer.SetVoiceDistanceFar(highSliderFar.value);
-            locPlayer.SetVoiceGain(highSliderGain.value);
-            locPlayer.SetVoiceDistanceNear(highSliderNear.value);
+            if (Networking.IsOwner(gameObject) == false)
+            {
+                Networking.SetOwner(localplayer, gameObject);
+            }
+
+            if (Networking.IsOwner(gameObject) == true)
+            {
+                if (boosted)
+                {
+                    if (localPlayerID == amplifyID)
+                    {
+                        Debug.Log("ID already matches amplifyID, forcing sync");
+                        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "SetVoiceHigh");
+                        Debug.Log("Player voice did increased");
+                        boosted = true;
+                    }
+                    else
+                    {
+                        amplifyID = localPlayerID;
+                        Debug.Log("Setting AmplifyID to " + amplifyID);
+                        RequestSerialization();
+                    }
+                }
+                else
+                {
+                    if (localPlayerID == noAmplifyID)
+                    {
+                        Debug.Log("ID already matches amplifyID, forcing sync");
+                        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "SetVoiceLow");
+                        Debug.Log("Player voice did decrease");
+                        boosted = false;
+                    }
+                    else
+                    {
+                        noAmplifyID = localPlayerID;
+                        Debug.Log("Setting AmplifyID to " + noAmplifyID);
+                        RequestSerialization();
+                    }
+                }
+                Debug.Log("Volume change");
+            }
         }
-        else
-        {
-            locPlayer.SetVoiceDistanceFar(lowSliderFar.value);
-            locPlayer.SetVoiceGain(lowSliderGain.value);
-            locPlayer.SetVoiceDistanceNear(lowSliderNear.value); 
-        }
-        Debug.Log("Volume change");
+        
     }
 
     public void MicrophonePickUp()
     {
-        if (locPlayer == null) return;
-        Debug.Log("Microphone has been picked");
-        if (!boosted)
+        
+
+        //if (Networking.IsClogged == false && Networking.IsNetworkSettled == true) //make sure network is ready
         {
-            if (locPlayer.isLocal)
+            if (Networking.IsOwner(gameObject) == false)
             {
-                locPlayer.SetVoiceDistanceFar(highSliderFar.value);
-                locPlayer.SetVoiceGain(highSliderGain.value);
-                locPlayer.SetVoiceDistanceNear(highSliderNear.value);
-                locPlayer.SetJumpImpulse(30);
+                Networking.SetOwner(localplayer, gameObject);
+            }
+            
+            if (Networking.IsOwner(gameObject) == true)
+            {
+                if (heldMicro != null)
+                {
+                    Color colMic = heldMicro.GetComponent<MicrophoneSub>().col;
+                    heldMicro.GetComponent<Renderer>().material.SetColor("_EmissionColor", colMic * 3);
+                }
+                Debug.Log("Microphone has been picked");
+                if (!boosted)
+                {
+                    if (localplayer.isLocal)
+                    {
+                        
 
-                boosted = true;
+                        if (localPlayerID == amplifyID)
+                        {
+                            Debug.Log("ID already matches amplifyID, forcing sync");
+                            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "SetVoiceHigh");
+                            Debug.Log("Player voice did increased");
+                            boosted = true;
+                        }
+                        else
+                        {
+                            amplifyID = localPlayerID;
+                            Debug.Log("Setting AmplifyID to " + amplifyID);
+                            RequestSerialization();
+                        }
 
-                Debug.Log("Player voice did increased");
+                    }
+                }
             }
         }
+        
     }
 
     public void MicrophoneDrop()
     {
-        if (locPlayer == null) return;
-        Debug.Log("Microphone has been drop");
-        if (!onStage)
+        
+        //if (Networking.IsClogged == false && Networking.IsNetworkSettled == true) //make sure network is ready
         {
-            if (locPlayer.isLocal)
+            if (Networking.IsOwner(gameObject) == false)
             {
-                locPlayer.SetVoiceDistanceFar(lowSliderFar.value);
-                locPlayer.SetVoiceGain(lowSliderGain.value);
-                locPlayer.SetVoiceDistanceNear(lowSliderNear.value);
-                locPlayer.SetJumpImpulse(3);
+                Networking.SetOwner(localplayer, gameObject);
+            }
+            
+            if (Networking.IsOwner(gameObject) == true)
+            {
+                if (heldMicro != null)
+                {
+                    Color colMic = heldMicro.GetComponent<MicrophoneSub>().col;
+                    heldMicro.GetComponent<Renderer>().material.SetColor("_EmissionColor", colMic * 1);
+                }
+                Debug.Log("Microphone has been drop");
+                if (!onStage)
+                {
+                    if (localplayer.isLocal)
+                    {
+                        
 
-                boosted = false;
 
-                Debug.Log("Player voice did decrease");
-                
+                        if (localPlayerID == noAmplifyID)
+                        {
+                            Debug.Log("ID already matches amplifyID, forcing sync");
+                            SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "SetVoiceLow");
+                            Debug.Log("Player voice did decrease");
+                            boosted = false;
+                        }
+                        else
+                        {
+                            noAmplifyID = localPlayerID;
+                            Debug.Log("Setting AmplifyID to " + noAmplifyID);
+                            RequestSerialization();
+                        }
+                        
+
+                    }
+                }
             }
         }
+                
     }
 
-    public void _IncreaseChange()
+    public void IncreaseChange()
     {
-        if (microphoneRed.GetComponent<VRC_Pickup>().IsHeld & micRedIncrease.isOn) MicrophoneDrop();
-        if (microphoneGreen.GetComponent<VRC_Pickup>().IsHeld & micGreenIncrease.isOn) MicrophoneDrop();
-        if (microphoneBlue.GetComponent<VRC_Pickup>().IsHeld & micBlueIncrease.isOn) MicrophoneDrop();
-        
+        if (heldMicro == null) return;
+        Debug.Log("IncreaceChange");
+        /*
+        if (microphoneRed.GetComponent<VRC_Pickup>().IsHeld && micRedIncrease.isOn) MicrophonePickUp();
+        if (microphoneGreen.GetComponent<VRC_Pickup>().IsHeld && micGreenIncrease.isOn) MicrophonePickUp();
+        if (microphoneBlue.GetComponent<VRC_Pickup>().IsHeld && micBlueIncrease.isOn) MicrophonePickUp();
+
+        if (!micRedIncrease.isOn) MicrophoneDrop();
+        if (!micGreenIncrease.isOn) MicrophoneDrop();
+        if (!micBlueIncrease.isOn) MicrophoneDrop();
+        */
+        if (heldMicro.GetComponent<VRC_Pickup>().IsHeld && heldMicro.GetComponent<MicrophoneSub>().increase.isOn)
+        {
+            MicrophonePickUp();
+        }
+
+        if (heldMicro.GetComponent<VRC_Pickup>().IsHeld && (!heldMicro.GetComponent<MicrophoneSub>().increase.isOn))
+        {
+            MicrophoneDrop();
+        }
+
+
     }
        
 
@@ -192,28 +377,83 @@ public class MainAudioController : UdonSharpBehaviour
 
     public void IncludeMic()
     {
-        //SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All,"_SyncMicIncl");
+       
         microphoneRed.SetActive(micRedInclude.isOn);
+        if (!micRedInclude.isOn) microphoneRed.GetComponent<VRC_Pickup>().Drop();
+
         microphoneGreen.SetActive(micGreenInclude.isOn);
+        if (!micGreenInclude.isOn) microphoneGreen.GetComponent<VRC_Pickup>().Drop();
+
         microphoneBlue.SetActive(micBlueInclude.isOn);
+        if (!micBlueInclude.isOn) microphoneBlue.GetComponent<VRC_Pickup>().Drop();
     }
-    public void _SyncMicIncl()
-    {
-
-    }
-
+    
     public void RedtoDef()
     {
-        //microphoneRed.transform.SetPositionAndRotation(defRed.transform.position,defRed.transform.rotation);
+        microphoneRed.GetComponent<VRC_Pickup>().Drop();
         microphoneRed.transform.position = defRed.transform.position;
         microphoneRed.transform.rotation = defRed.transform.rotation;
     }
     public void GreentoDef()
     {
-        microphoneGreen.transform.SetPositionAndRotation(defGreen.transform.position, defRed.transform.rotation);
+        microphoneGreen.GetComponent<VRC_Pickup>().Drop();
+        microphoneGreen.transform.position = defGreen.transform.position;
+        microphoneGreen.transform.rotation = defGreen.transform.rotation;
     }
     public void BluetoDef()
     {
-        microphoneBlue.transform.SetPositionAndRotation(defBlue.transform.position, defRed.transform.rotation);
+        microphoneBlue.GetComponent<VRC_Pickup>().Drop();
+        microphoneBlue.transform.position = defBlue.transform.position;
+        microphoneBlue.transform.rotation = defBlue.transform.rotation;
+    }
+
+    public override void OnPlayerJoined(VRCPlayerApi player)
+    {
+        if (Networking.IsOwner(this.gameObject))
+        {
+            if (Networking.IsClogged == false && Networking.IsNetworkSettled)
+            {
+                Debug.Log("Network not clogged and settled, owner serializing booster");
+                RequestSerialization();
+            }
+            else
+            {
+                Debug.Log("Network clogged or not settled, voice booster serialization failed");
+            }
+
+        }
+    }
+
+    public void SetVoiceHigh()
+    {
+        if (Utilities.IsValid(VRCPlayerApi.GetPlayerById(amplifyID)))
+        {
+            amplifyPlayer = VRCPlayerApi.GetPlayerById(amplifyID);
+            Debug.Log("Amplifying " + amplifyPlayer.displayName + "'s voice");
+            amplifyPlayer.SetVoiceDistanceFar(highSliderFar.value);
+            amplifyPlayer.SetVoiceGain(highSliderGain.value);
+            amplifyPlayer.SetVoiceDistanceNear(highSliderNear.value);
+
+        }
+
+        
+    }
+    public void SetVoiceLow()
+    {
+        if (Utilities.IsValid(VRCPlayerApi.GetPlayerById(noAmplifyID)))
+        {
+            noAmplifyPlayer = VRCPlayerApi.GetPlayerById(noAmplifyID);
+            Debug.Log("DeAmplifying " + noAmplifyPlayer.displayName + "'s voice");
+            noAmplifyPlayer.SetVoiceDistanceFar(lowSliderFar.value);
+            noAmplifyPlayer.SetVoiceGain(lowSliderGain.value);
+            noAmplifyPlayer.SetVoiceDistanceNear(lowSliderNear.value);
+        }
+        
+    }
+
+
+    public override bool OnOwnershipRequest(VRCPlayerApi requestingPlayer, VRCPlayerApi requestedOwner)
+    {
+        return true;
     }
 }
