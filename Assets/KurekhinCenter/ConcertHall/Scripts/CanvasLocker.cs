@@ -7,12 +7,14 @@ using UnityEngine.UI;
 
 public class CanvasLocker : UdonSharpBehaviour
 {
+    
     public UnityEngine.UI.Toggle locker;
 
     public UnityEngine.UI.Slider[] sliders;
     public UnityEngine.UI.Toggle[] toggles;
     public UnityEngine.UI.Dropdown[] dropdowns;
     public UnityEngine.UI.Button[] buttons;
+
 
     void Start()
     {
@@ -54,4 +56,5 @@ public class CanvasLocker : UdonSharpBehaviour
             }
         }
     }
+    
 }

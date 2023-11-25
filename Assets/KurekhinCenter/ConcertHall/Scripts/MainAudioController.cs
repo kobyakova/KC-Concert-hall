@@ -33,6 +33,7 @@ public class MainAudioController : UdonSharpBehaviour
     [Header("Microphones States")]
     public Toggle micRedInclude;
     public Toggle micRedIncrease;
+    public Toggle includeRedMicrSub;
     [Space(2)]
     public Toggle micGreenInclude;
     public Toggle micGreenIncrease;
@@ -62,6 +63,11 @@ public class MainAudioController : UdonSharpBehaviour
     private int localPlayerID;
     
     public GameObject heldMicro;
+    public Image indicator;
+     
+    
+   
+    
     
 
 
@@ -161,16 +167,19 @@ public class MainAudioController : UdonSharpBehaviour
                        (microphoneGreen.GetComponent<VRC_Pickup>().IsHeld && micGreenIncrease.isOn) ||
                        (microphoneBlue.GetComponent<VRC_Pickup>().IsHeld && micBlueIncrease.isOn)) )//Если не один из включённых микрофонов не в руках. Т.е. если хоть один включённый микрофон удерживается, то не надо
                 */
-                if (heldMicro.GetComponent<VRC_Pickup>().IsHeld && heldMicro.GetComponent<MicrophoneSub>().increase.isOn) 
+                if (heldMicro != null)
                 {
-                    MicrophonePickUp();
-                }
+                    if (heldMicro.GetComponent<VRC_Pickup>().IsHeld && heldMicro.GetComponent<MicrophoneSub>().increase.isOn)
+                    {
+                        MicrophonePickUp();
+                    }
+                } 
                 else
-                { 
+                {
 
                     if (localplayer.isLocal)
                     {
-                        
+
                         if (localPlayerID == noAmplifyID)
                         {
                             Debug.Log("ID already matches amplifyID, forcing sync");
@@ -309,8 +318,6 @@ public class MainAudioController : UdonSharpBehaviour
                     if (localplayer.isLocal)
                     {
                         
-
-
                         if (localPlayerID == noAmplifyID)
                         {
                             Debug.Log("ID already matches amplifyID, forcing sync");
@@ -380,6 +387,7 @@ public class MainAudioController : UdonSharpBehaviour
        
         microphoneRed.SetActive(micRedInclude.isOn);
         if (!micRedInclude.isOn) microphoneRed.GetComponent<VRC_Pickup>().Drop();
+        includeRedMicrSub.isOn = micRedInclude.isOn;
 
         microphoneGreen.SetActive(micGreenInclude.isOn);
         if (!micGreenInclude.isOn) microphoneGreen.GetComponent<VRC_Pickup>().Drop();
@@ -434,6 +442,7 @@ public class MainAudioController : UdonSharpBehaviour
             amplifyPlayer.SetVoiceGain(highSliderGain.value);
             amplifyPlayer.SetVoiceDistanceNear(highSliderNear.value);
 
+            indicator.color = new Color(1, 0, 0);
         }
 
         
@@ -447,6 +456,8 @@ public class MainAudioController : UdonSharpBehaviour
             noAmplifyPlayer.SetVoiceDistanceFar(lowSliderFar.value);
             noAmplifyPlayer.SetVoiceGain(lowSliderGain.value);
             noAmplifyPlayer.SetVoiceDistanceNear(lowSliderNear.value);
+
+            indicator.color = new Color(0, 0, 0);
         }
         
     }
@@ -456,4 +467,6 @@ public class MainAudioController : UdonSharpBehaviour
     {
         return true;
     }
+
+   
 }

@@ -72,7 +72,7 @@ public class MainAppratController : UdonSharpBehaviour
     public UnityEngine.UI.Toggle includePostProc;
 
     //Other GROUP
-
+    public VRC_AvatarPedestal avatarPedestal;
 
     void Start()
     {
@@ -293,5 +293,18 @@ public class MainAppratController : UdonSharpBehaviour
         postProc.GetComponent<Renderer>().enabled = includePostProc.isOn;
     }
 
-    
+
+    public void ChangeAvatar()
+    {
+        if (Networking.IsOwner(gameObject) == false)
+        {
+            Networking.SetOwner(Networking.LocalPlayer, gameObject);
+        }
+        SendCustomNetworkEvent(VRC.Udon.Common.Interfaces.NetworkEventTarget.All, "AllAvatarChange");
+    }
+    public void AllAvatarChange()
+    {
+        avatarPedestal.SetAvatarUse(Networking.LocalPlayer);
+        Debug.Log("AvatarChanged");
+    }
 }
