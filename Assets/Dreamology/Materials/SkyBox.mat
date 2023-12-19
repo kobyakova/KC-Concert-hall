@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SkyBox
-  m_Shader: {fileID: 106, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 46da60a62e00b56438a31c4d3ac47f50, type: 3}
   m_ShaderKeywords: _FLIP_ON _MAPPING_LATITUDE_LONGITUDE_LAYOUT _SUNDISK_HIGH_QUALITY
     _SWAPEYES_ON
   m_LightmapFlags: 4
@@ -82,6 +82,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _Rotation: 0
+    - _Scale: 0.73
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -93,6 +94,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 0.135, g: 0.135, b: 0.135, a: 1}
+    - _Color2: {r: 0.01886791, g: 0.01886791, b: 0.01886791, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GroundColor: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
     - _MatrixForward: {r: 0, g: 0, b: 1, a: 0}

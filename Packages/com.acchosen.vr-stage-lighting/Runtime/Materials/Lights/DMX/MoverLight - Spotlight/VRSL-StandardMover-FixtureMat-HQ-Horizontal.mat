@@ -217,7 +217,7 @@ Material:
     - _TiltInvert: 0
     - _TriplanarFalloff: 1
     - _UnityLightingContribution: 1
-    - _UniversalIntensity: 0.5
+    - _UniversalIntensity: 1
     - _UseRawGrid: 1
     - _UseWorldNorm: 0
     - _XOffset: 0

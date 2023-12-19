@@ -8,10 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Glass
-  m_Shader: {fileID: 4800000, guid: 5ca92f1e9fc35504aba297fd1acd62df, type: 3}
-  m_ShaderKeywords: COLOR_GRADING_HDR_3D MOCHIE_PBR POI_AUDIOLINK POI_EMISSION_3
-    POI_MATCAP2 POI_MATCAP3 VIGNETTE_MASKED _EMISSION _LIGHTINGMODE_REALISTIC _RIM2STYLE_POIYOMI
-    _RIMSTYLE_POIYOMI _STOCHASTICMODE_DELIOT_HEITZ _SUNDISK_SIMPLE
+  m_Shader: {fileID: 4800000, guid: 1202e9e0b257c2746b4f91cf62234ae9, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -19,10 +17,10 @@ Material:
   stringTagMap:
     AllLockedGUIDS: 0edd9bd02ace57a4498ca000c106e3ec
     OriginalKeywords: COLOR_GRADING_HDR_3D MOCHIE_PBR POI_AUDIOLINK POI_EMISSION_3
-      POI_MATCAP2 POI_MATCAP3 POI_RIM2 VIGNETTE_MASKED _EMISSION _GLOSSYREFLECTIONS_OFF
-      _LIGHTINGMODE_REALISTIC _RIM2STYLE_POIYOMI _RIMSTYLE_POIYOMI _STOCHASTICMODE_DELIOT_HEITZ
-      _SUNDISK_SIMPLE
-    OriginalShader: .poiyomi/Poiyomi 8.2/Poiyomi Pro Geometric Dissolve
+      POI_MATCAP2 POI_MATCAP3 VIGNETTE_MASKED _EMISSION _LIGHTINGMODE_REALISTIC _RIM2STYLE_POIYOMI
+      _RIMSTYLE_POIYOMI _STOCHASTICMODE_DELIOT_HEITZ _SUNDISK_SIMPLE
+    OriginalShader: .poiyomi/Poiyomi 8.1/Poiyomi Toon
+    RenderType: Opaque
     _GeoDissolveAlphaAnimated: 1
   disabledShaderPasses: []
   m_SavedProperties:
@@ -2325,7 +2323,7 @@ Material:
     - _Set_RimLightMaskChannel: 1
     - _Set_RimLightMaskUV: 0
     - _ShadeColor_Step: 0
-    - _ShaderOptimizerEnabled: 0
+    - _ShaderOptimizerEnabled: 1
     - _ShaderUIWarning0: -0
     - _ShaderUIWarning1: -0
     - _ShadingEnabled: 1
