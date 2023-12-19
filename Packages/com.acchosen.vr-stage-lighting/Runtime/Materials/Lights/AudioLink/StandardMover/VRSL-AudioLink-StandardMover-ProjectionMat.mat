@@ -98,7 +98,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SamplingTexture:
-        m_Texture: {fileID: 2800000, guid: 64e7766099ad46747a07014e44d0aea1, type: 3}
+        m_Texture: {fileID: 2800000, guid: ba9a307ceadf5564683f0e0af8af748c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SceneNormals:
@@ -116,9 +116,9 @@ Material:
     - _BlueMultiplier: 1
     - _BumpScale: 1
     - _ClippingThreshold: 0.05
-    - _ConeLength: 3.62
+    - _ConeLength: 3.02
     - _ConeSync: 1.7
-    - _ConeWidth: 2.5
+    - _ConeWidth: 1
     - _DNEnabler: 0
     - _Delay: 0
     - _DistFade: 1.31
@@ -137,12 +137,12 @@ Material:
     - _FadeAmt: 0
     - _FadeStrength: 3.72
     - _FeatherOffset: 0.5
-    - _FinalIntensity: 1
+    - _FinalIntensity: 0.32
     - _FinalStrobeFreq: 0
     - _FixtureBaseRotationY: 0
     - _FixtureMaxIntensity: 0.393
     - _FixtureRotationX: 0
-    - _GlobalIntensity: 0.1
+    - _GlobalIntensity: 0.795
     - _GlobalIntensityBlend: 1
     - _Glossiness: 1
     - _GreenMultiplier: 1
@@ -156,7 +156,7 @@ Material:
     - _MaxMinPanAngle: 0
     - _MaxMinTiltAngle: 0
     - _Metallic: 0.501
-    - _MinimumBeamRadius: 0.94
+    - _MinimumBeamRadius: 1
     - _ModX: 0
     - _ModY: 0
     - _MultiSampleDepth: 1
@@ -166,14 +166,14 @@ Material:
     - _PanInvert: 0
     - _ProjectionCutoff: 0.25
     - _ProjectionDistanceFallOff: 0.006
-    - _ProjectionFade: 2.35
-    - _ProjectionFadeCurve: 1.99
-    - _ProjectionIntensity: 3
+    - _ProjectionFade: 3
+    - _ProjectionFadeCurve: 5
+    - _ProjectionIntensity: 5
     - _ProjectionOriginCutoff: 0.25
     - _ProjectionRange: 8
     - _ProjectionRotation: -180
-    - _ProjectionSelection: 1
-    - _ProjectionShadowHarshness: 0.9
+    - _ProjectionSelection: 3.16
+    - _ProjectionShadowHarshness: 2.83407
     - _ProjectionUVMod: 0.8
     - _ProjectionUVMod2: 0.8
     - _ProjectionUVMod3: 0.8
@@ -200,7 +200,7 @@ Material:
     - _ThemeColorTarget: 0
     - _TiltInvert: 0
     - _TriplanarFalloff: 1
-    - _UniversalIntensity: 0.5
+    - _UniversalIntensity: 1
     - _UseRawGrid: 1
     - _UseWorldNorm: 0
     - _XOffset: 0
